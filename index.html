@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK FS Competitor Review — Coventry Building Society</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%); }
+        .cbs-accent { color: #00a651; }
+        .cbs-bg { background-color: #00a651; }
+        .card-hover { transition: all 0.2s ease; }
+        .card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .brand-pill { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+        .tab-active { border-bottom: 3px solid #00a651; color: #00a651; font-weight: 600; }
+        .tab-inactive { border-bottom: 3px solid transparent; color: #64748b; }
+        .tab-inactive:hover { color: #334155; border-color: #cbd5e1; }
+        .engagement-bar { height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden; }
+        .engagement-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+        .tiktok-link { background: linear-gradient(135deg, #ff0050, #00f2ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+        .scroll-section { scroll-margin-top: 80px; }
+        nav.sticky-nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: rgba(255,255,255,0.9); border-bottom: 1px solid #e2e8f0; }
+        .category-badge { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+        .brand-owned-badge { background: linear-gradient(135deg, #ff0050, #00f2ea); color: white; font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600; }
+        details summary { cursor: pointer; list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+        details[open] summary .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform 0.2s ease; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<!-- HERO -->
+<header class="gradient-hero text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+        <img src="hero.png" alt="" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-16">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">COMPETITOR REVIEW</span>
+            <span class="text-gray-400 text-sm">February 2026</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-black mb-3">UK Financial Services<br/>Competitor Landscape</h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl">Comprehensive analysis for <strong class="text-green-400">Coventry Building Society</strong> — social presence, positioning, campaigns &amp; culture-jacking opportunities across 20 competitors.</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="text-3xl font-black">20</div>
+                <div class="text-sm text-gray-300">Brands Analysed</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="text-3xl font-black">764</div>
+                <div class="text-sm text-gray-300">TikTok Posts Scraped</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="text-3xl font-black">82M+</div>
+                <div class="text-sm text-gray-300">Total Views Captured</div>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="text-3xl font-black">43</div>
+                <div class="text-sm text-gray-300">Hashtags Searched</div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+    <div class="max-w-7xl mx-auto px-6 flex gap-6 overflow-x-auto py-3 text-sm">
+        <a href="#exec-summary" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Executive Summary</a>
+        <a href="#market" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Market Context</a>
+        <a href="#cbs" class="whitespace-nowrap font-semibold text-green-600 hover:text-green-700">CBS Deep-Dive</a>
+        <a href="#landscape" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Competitive Landscape</a>
+        <a href="#banks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Banks</a>
+        <a href="#building-societies" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Building Societies</a>
+        <a href="#neobanks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Neobanks</a>
+        <a href="#benchmarks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Benchmarks</a>
+        <a href="#tiktok-audit" class="whitespace-nowrap text-gray-500 hover:text-gray-900">TikTok Audit</a>
+        <a href="#categories" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Category Trends</a>
+        <a href="#culture-jack" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Culture-Jacking</a>
+        <a href="#takeaways" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Strategic Priorities</a>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
+
+<!-- ============================================= -->
+<!-- EXECUTIVE SUMMARY -->
+<!-- ============================================= -->
+<section id="exec-summary" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Executive Summary</h2>
+    <div class="bg-white rounded-xl p-8 shadow-sm border space-y-4">
+        <p class="text-gray-700 leading-relaxed"><strong>Coventry Building Society enters 2025 at a pivotal inflection point.</strong> The &pound;780m acquisition of The Co-operative Bank (completed January 2025) transforms the group into a <strong>&pound;89bn-asset mutual serving 4.5 million members and customers</strong> &mdash; but the competitive landscape is shifting faster than at any point in the past decade.</p>
+
+        <p class="text-gray-700 leading-relaxed">Three forces are reshaping UK financial services marketing simultaneously: a wave of <strong>consolidation</strong> (Nationwide + Virgin Money, Coventry + Co-op Bank, pending Santander + TSB), the aggressive <strong>expansion of neobanks</strong> into traditional banking territory (Revolut announced mortgages; Monzo increased marketing spend <strong>167% to &pound;58.5m</strong>), and a regulatory environment under <strong>FCA Consumer Duty</strong> that demands clearer, fairer, more transparent communication.</p>
+
+        <p class="text-gray-700 leading-relaxed">Across the 20 institutions reviewed, the last 12 months have seen <strong>four major brand repositionings</strong> (Lloyds, Metro Bank, Skipton, Leeds), <strong>two landmark acquisitions</strong> reshaping the mutual sector, and a decisive shift toward emotional storytelling, humour, and purpose-led marketing.</p>
+
+        <div class="grid md:grid-cols-5 gap-4 mt-6 pt-6 border-t">
+            <div class="text-center">
+                <div class="text-2xl font-black text-red-600">&pound;50m+</div>
+                <div class="text-xs text-gray-500">Lloyds — #1 UK FS advertiser</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-pink-600">&pound;58.5m</div>
+                <div class="text-xs text-gray-500">Monzo marketing spend (+167%)</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-green-600">&lt;&pound;5m</div>
+                <div class="text-xs text-gray-500">CBS estimated media spend</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-blue-600">89%</div>
+                <div class="text-xs text-gray-500">UK mortgages via intermediaries</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-purple-600">40%</div>
+                <div class="text-xs text-gray-500">UK adults with digital-only bank</div>
+            </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
+            <h4 class="font-bold text-amber-800 mb-2">Five strategic themes for CBS:</h4>
+            <ol class="text-sm text-amber-900 space-y-1 list-decimal list-inside">
+                <li>Defending and differentiating mutual positioning against Nationwide's aggressive "anti-bank" narrative</li>
+                <li>Leveraging the Co-op Bank acquisition to own ethical/purpose-led territory</li>
+                <li>Closing the digital experience gap with neobanks (first app only launched 2024)</li>
+                <li>Protecting the strong intermediary channel against Accord (YBS) and the new Nationwide/VM/TMW powerhouse</li>
+                <li>Developing a brand platform that punches above its weight in an increasingly noisy market</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- MARKET CONTEXT -->
+<!-- ============================================= -->
+<section id="market" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">UK FS Marketing Landscape 2024-2025</h2>
+
+    <!-- Rate cycle -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-bold mb-3">The Rate Cycle Reshaped Everything</h3>
+            <p class="text-sm text-gray-600 mb-3">The Bank of England cut rates from <strong>5.25% to 4.50%</strong> between August 2024 and February 2025 &mdash; the first easing cycle since before the pandemic.</p>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="bg-blue-50 rounded-lg p-3">
+                    <div class="text-lg font-bold text-blue-700">&pound;200bn+</div>
+                    <div class="text-xs text-gray-500">Gross mortgage lending 2024 (+7%)</div>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-3">
+                    <div class="text-lg font-bold text-blue-700">29.6%</div>
+                    <div class="text-xs text-gray-500">FTB completions share (record)</div>
+                </div>
+                <div class="bg-amber-50 rounded-lg p-3">
+                    <div class="text-lg font-bold text-amber-700">90%+</div>
+                    <div class="text-xs text-gray-500">Savings providers cut rates</div>
+                </div>
+                <div class="bg-amber-50 rounded-lg p-3">
+                    <div class="text-lg font-bold text-amber-700">44%</div>
+                    <div class="text-xs text-gray-500">Consumers planning to switch savings</div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-bold mb-3">Advertising &amp; Regulatory Context</h3>
+            <p class="text-sm text-gray-600 mb-3">Finance is the <strong>3rd-largest UK advertising category</strong>. Total UK ad spend: &pound;42.6bn (2024, +10.4%). Digital now commands 63%+ of FS media budgets.</p>
+            <div class="space-y-2 text-sm">
+                <div class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 font-bold">&#x25CF;</span> <span>Search + online display projected to exceed <strong>80% of total spend by 2026</strong></span></div>
+                <div class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 font-bold">&#x25CF;</span> <span>Social media = <strong>53% of online display investment</strong></span></div>
+                <div class="flex items-start gap-2"><span class="text-red-500 mt-0.5 font-bold">&#x25CF;</span> <span><strong>FCA Consumer Duty</strong> (July 2024): clearer language, explicit value props, fair value</span></div>
+                <div class="flex items-start gap-2"><span class="text-red-500 mt-0.5 font-bold">&#x25CF;</span> <span>FCA interviewed <strong>20 finfluencers under caution</strong> in 2024</span></div>
+                <div class="flex items-start gap-2"><span class="text-green-500 mt-0.5 font-bold">&#x25CF;</span> <span>Consumer Duty favours brands with genuine product advantages &mdash; <strong>inherent building society strength</strong></span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Six creative trends -->
+    <div class="bg-white rounded-xl p-6 shadow-sm border mb-8">
+        <h3 class="font-bold mb-4">Six Creative Trends Defining 2024-2025</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">1. Humour + Emotional Storytelling</div>
+                <p class="text-xs text-gray-600">Nationwide's Dominic West, Santander's Ant &amp; Dec, TSB's Tiny the Elephant, Barclays' "Kids World" &mdash; the sector has moved decisively toward warmth, wit, and relatability.</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">2. Celebrity Partnerships Proliferate</div>
+                <p class="text-xs text-gray-600">Richard Ayoade (HSBC), Dominic West (Nationwide), Ant &amp; Dec (Santander), Brian Cox (Santander B2B), Guz Khan (CBS), Simon Farnaby (Skipton), Daisy May Cooper (TSB).</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">3. Brand Platform Refreshes Accelerate</div>
+                <p class="text-xs text-gray-600">Lloyds' biggest rebrand in history (Wolff Olins). Leeds' first-ever strapline. Skipton repositioned to "Founded on Fairness." Metro Bank pivoted to "Relationship Banking."</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">4. Mutual Messaging Intensifies</div>
+                <p class="text-xs text-gray-600">Nationwide explicitly attacks shareholder model. Skipton frames fairness as mutual principle. Leeds connects saving to community benefit. Territory once assumed now requires active defence.</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">5. Digital-First Media is Standard</div>
+                <p class="text-xs text-gray-600">TSB on Netflix. NatWest: 6bn+ TikTok views. Monzo's FT takeover changed the newspaper's printers. Nationwide TikTok-first with Mail Metro Media. Media mix is fragmented and platform-native.</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4">
+                <div class="font-semibold text-sm mb-1">6. Financial Education as Table Stakes</div>
+                <p class="text-xs text-gray-600">Barclays LifeSkills, NatWest MoneySense, Skipton's C4 "Make Your Move" series, Wise's SEO currency tools &mdash; brands building audiences through utility, not just advertising.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consolidation map -->
+    <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <h3 class="font-bold mb-4">Consolidation Wave — Who Owns Who (2024-2025)</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div class="font-bold text-green-800 mb-2">Coventry BS Group</div>
+                <div class="text-sm space-y-1">
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span> Coventry Building Society</div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-400"></span> The Co-operative Bank <span class="text-xs text-green-600">(Jan 2025, &pound;780m)</span></div>
+                </div>
+                <div class="text-xs text-green-700 mt-2">&pound;89bn assets | 4.5m members/customers</div>
+            </div>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                <div class="font-bold text-blue-800 mb-2">Nationwide Group</div>
+                <div class="text-sm space-y-1">
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Nationwide Building Society</div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-400"></span> Virgin Money UK <span class="text-xs text-blue-600">(Oct 2024, &pound;2.9bn)</span></div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-300"></span> The Mortgage Works</div>
+                </div>
+                <div class="text-xs text-blue-700 mt-2">696 branches | 1 in 3 UK adults</div>
+            </div>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                <div class="font-bold text-red-800 mb-2">Santander UK (Pending)</div>
+                <div class="text-sm space-y-1">
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500"></span> Santander UK</div>
+                    <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-400"></span> TSB Bank <span class="text-xs text-red-600">(Jul 2025, &pound;2.65bn)</span></div>
+                </div>
+                <div class="text-xs text-red-700 mt-2">Would become 3rd largest by PCA balances</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CBS DEEP DIVE -->
+<!-- ============================================= -->
+<section id="cbs" class="scroll-section">
+    <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 rounded-xl bg-green-600 flex items-center justify-center text-white font-black text-lg">CBS</div>
+        <div>
+            <h2 class="text-2xl font-bold">Coventry Building Society — Home Team Analysis</h2>
+            <p class="text-sm text-gray-500">B Corp Certified | ~&pound;89bn assets (post-acquisition) | Est. 1884 | Acquired Co-operative Bank Jan 2025</p>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="text-sm font-semibold text-gray-500 mb-2">Brand Positioning</div>
+            <div class="text-lg font-bold mb-2 text-green-700">"All Together Better"</div>
+            <p class="text-sm text-gray-600 mb-2">Mutual ethos — putting members first. UK's first B Corp certified building society (July 2023). Focused on savings and mortgages with no current accounts.</p>
+            <div class="text-xs bg-green-50 border border-green-200 rounded p-2 mt-2"><strong>Key campaigns:</strong> "Save for Your Sunny Days" (Oct 2024, VOD, Guz Khan), "All Together Even Better" (Jan 2025, OOH/press, Co-op Bank acquisition), "You'll Be Sent to Coventry" (2023, repositioning Coventry as positive).</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="text-sm font-semibold text-gray-500 mb-2">Key Proof Points</div>
+            <ul class="text-sm text-gray-600 space-y-1">
+                <li>&#x2022; <strong>&pound;780M acquisition of Co-operative Bank</strong> (Jan 2025) — now top-10 UK lender</li>
+                <li>&#x2022; B Corp certified — first UK building society</li>
+                <li>&#x2022; ~&pound;89bn combined assets, 4.5M members/customers</li>
+                <li>&#x2022; Fair Tax Mark + ISO 20400 + ISO 14064-1</li>
+                <li>&#x2022; "Most Improved" — FA Service Awards 2024</li>
+                <li>&#x2022; 2.7M LinkedIn impressions (broker campaign)</li>
+                <li>&#x2022; Coventry BS Arena: 1M+ visitors in 2024</li>
+                <li>&#x2022; New member app launched 2024 (biometric login, live chat)</li>
+                <li>&#x2022; 90% of mortgages via broker channel</li>
+            </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="text-sm font-semibold text-gray-500 mb-2">TikTok Presence</div>
+            <div class="text-4xl font-black text-red-500 mb-2">0</div>
+            <div class="text-sm text-gray-600 mb-2">Brand-owned TikTok posts</div>
+            <p class="text-sm text-gray-500">No official TikTok account detected. All 11 posts under #coventrybuildingsociety are organic/UGC. Compare: Monzo has 6 brand posts with 24.9M views.</p>
+        </div>
+    </div>
+
+    <!-- CBS Gap Analysis -->
+    <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200 mb-8">
+        <h3 class="text-lg font-bold mb-4 text-green-800">Gap Analysis vs Competitors</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h4 class="font-semibold text-green-700 mb-2">Strengths</h4>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start gap-2"><span class="text-green-600 mt-0.5">&#10003;</span> <span>B Corp differentiation — unique in building society sector</span></li>
+                    <li class="flex items-start gap-2"><span class="text-green-600 mt-0.5">&#10003;</span> <span>Strong broker/intermediary platform — Submissions Brain integration</span></li>
+                    <li class="flex items-start gap-2"><span class="text-green-600 mt-0.5">&#10003;</span> <span>Competitive savings rates drive organic conversation</span></li>
+                    <li class="flex items-start gap-2"><span class="text-green-600 mt-0.5">&#10003;</span> <span>Ethical positioning resonates with values-driven consumers</span></li>
+                    <li class="flex items-start gap-2"><span class="text-green-600 mt-0.5">&#10003;</span> <span>Trust / heritage advantage (est. 1884, 140 years)</span></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold text-red-600 mb-2">Gaps &amp; Opportunities</h4>
+                <ul class="text-sm space-y-2">
+                    <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">!</span> <span><strong>Zero TikTok presence</strong> — massive gap vs Monzo (26.9M views), Revolut (16.7M), Nationwide (4.6M)</span></li>
+                    <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">!</span> <span><strong>Digital CX gap</strong> — no app-first features vs neobank standard</span></li>
+                    <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">!</span> <span><strong>Limited brand awareness campaigns</strong> — no TVC/OOH visibility vs Nationwide, Barclays</span></li>
+                    <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">!</span> <span><strong>Category ownership missing</strong> — not showing up in #savings, #mortgage, #isasavings conversations</span></li>
+                    <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">!</span> <span><strong>B2B broker marketing</strong> — LinkedIn-heavy but missing TikTok's mortgage broker community</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CBS B2B vs B2C -->
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">B2C Consumer</div>
+            <h4 class="font-bold mb-2">Consumer Marketing Assessment</h4>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li><strong>Savings:</strong> Competitive rates are the primary driver. Organic TikTok mentions reference CBS for best buy tables.</li>
+                <li><strong>Mortgages:</strong> Product-led messaging. Limited emotional storytelling vs Nationwide's "Fairer Way" narrative.</li>
+                <li><strong>Brand:</strong> B Corp story is powerful but under-amplified in consumer channels.</li>
+                <li><strong>Social:</strong> Minimal social presence. No TikTok, limited Instagram vs competitors.</li>
+                <li><strong>CX:</strong> Online banking functional but lacks app innovation seen at Monzo/Starling.</li>
+            </ul>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">B2B Intermediary</div>
+            <h4 class="font-bold mb-2">Broker Marketing Assessment</h4>
+            <ul class="text-sm text-gray-600 space-y-2">
+                <li><strong>Platform:</strong> "Coventry for Intermediaries" — joined Mortgage Brain's Submissions Brain (2025). Standardised DIP form.</li>
+                <li><strong>LinkedIn:</strong> 2.7M impressions on broker-targeted campaigns. Strong channel fit.</li>
+                <li><strong>Awards:</strong> "Most Improved Mortgage Provider" — FA Service Awards 2024.</li>
+                <li><strong>Content:</strong> Insight-led campaign by mark-making* agency. Positioning around broker certainty.</li>
+                <li><strong>Opportunity:</strong> Mortgage broker TikTok community is growing fast — @gomortgage, @sturgessmortgage etc.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- COMPETITIVE LANDSCAPE -->
+<!-- ============================================= -->
+<section id="landscape" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Competitive Landscape — TikTok Presence</h2>
+    <p class="text-gray-600 mb-6 text-sm">Sorted by total TikTok views. Green bars = engagement rate. Brands with owned accounts highlighted.</p>
+
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-4 py-3 font-semibold">Brand</th>
+                        <th class="text-left px-4 py-3 font-semibold">Category</th>
+                        <th class="text-right px-4 py-3 font-semibold">Total Views</th>
+                        <th class="text-right px-4 py-3 font-semibold">Likes</th>
+                        <th class="text-right px-4 py-3 font-semibold">Eng %</th>
+                        <th class="text-center px-4 py-3 font-semibold">TikTok Acct</th>
+                        <th class="text-center px-4 py-3 font-semibold">Brand Posts</th>
+                        <th class="text-right px-4 py-3 font-semibold">GB %</th>
+                        <th class="text-right px-4 py-3 font-semibold">Creators</th>
+                    </tr>
+                </thead>
+                <tbody id="landscape-table"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- BANKS -->
+<!-- ============================================= -->
+<section id="banks" class="scroll-section">
+    <div class="flex items-center gap-3 mb-6">
+        <div class="category-badge bg-blue-600 text-white text-sm px-4 py-1">BANKS</div>
+        <h2 class="text-2xl font-bold">Traditional Banks</h2>
+    </div>
+    <div id="banks-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============================================= -->
+<!-- BUILDING SOCIETIES -->
+<!-- ============================================= -->
+<section id="building-societies" class="scroll-section">
+    <div class="flex items-center gap-3 mb-6">
+        <div class="category-badge bg-green-600 text-white text-sm px-4 py-1">BUILDING SOCIETIES</div>
+        <h2 class="text-2xl font-bold">Building Societies</h2>
+    </div>
+    <div id="bs-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============================================= -->
+<!-- NEOBANKS -->
+<!-- ============================================= -->
+<section id="neobanks" class="scroll-section">
+    <div class="flex items-center gap-3 mb-6">
+        <div class="category-badge bg-purple-600 text-white text-sm px-4 py-1">NEOBANKS</div>
+        <h2 class="text-2xl font-bold">Neobanks &amp; Challengers</h2>
+    </div>
+    <div id="neo-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============================================= -->
+<!-- BENCHMARK TABLES -->
+<!-- ============================================= -->
+<section id="benchmarks" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Cross-Category Benchmarks</h2>
+
+    <!-- Media Spend Hierarchy -->
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
+        <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Media Spend Hierarchy</h3></div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-4 py-2 font-semibold">Tier</th>
+                        <th class="text-left px-4 py-2 font-semibold">Institutions</th>
+                        <th class="text-right px-4 py-2 font-semibold">Est. Annual UK Media Spend</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <tr class="bg-red-50">
+                        <td class="px-4 py-3 font-bold text-red-700">Tier 1: Market Leader</td>
+                        <td class="px-4 py-3">Lloyds Banking Group</td>
+                        <td class="text-right px-4 py-3 font-mono font-bold">&pound;50m+</td>
+                    </tr>
+                    <tr class="bg-orange-50">
+                        <td class="px-4 py-3 font-bold text-orange-700">Tier 2: Major</td>
+                        <td class="px-4 py-3">Barclays, Nationwide, Monzo*</td>
+                        <td class="text-right px-4 py-3 font-mono font-bold">&pound;20m&ndash;&pound;50m</td>
+                    </tr>
+                    <tr class="bg-yellow-50">
+                        <td class="px-4 py-3 font-bold text-yellow-700">Tier 3: Significant</td>
+                        <td class="px-4 py-3">NatWest, HSBC, Santander</td>
+                        <td class="text-right px-4 py-3 font-mono font-bold">&pound;10m&ndash;&pound;20m</td>
+                    </tr>
+                    <tr class="bg-blue-50">
+                        <td class="px-4 py-3 font-bold text-blue-700">Tier 4: Moderate</td>
+                        <td class="px-4 py-3">TSB, Metro Bank, Skipton BS, Yorkshire BS, Leeds BS</td>
+                        <td class="text-right px-4 py-3 font-mono font-bold">&pound;5m&ndash;&pound;10m</td>
+                    </tr>
+                    <tr class="bg-green-100 font-semibold">
+                        <td class="px-4 py-3 font-bold text-green-700">Tier 5: Emerging</td>
+                        <td class="px-4 py-3">Coventry BS, Co-op Bank, Virgin Money, Starling, Revolut (UK)</td>
+                        <td class="text-right px-4 py-3 font-mono font-bold">Below &pound;5m</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="px-4 py-2 text-xs text-gray-500 border-t">*Monzo's &pound;58.5m total marketing includes non-media; estimated paid media &pound;20m&ndash;&pound;30m. Revolut/Starling spend significantly at global level.</div>
+    </div>
+
+    <!-- Digital Maturity -->
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
+        <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Digital Maturity Comparison</h3></div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-3 py-2 font-semibold">Institution</th>
+                        <th class="text-center px-3 py-2 font-semibold">iOS Rating</th>
+                        <th class="text-center px-3 py-2 font-semibold">CMA Ranking</th>
+                        <th class="text-center px-3 py-2 font-semibold">11:FS Score</th>
+                        <th class="text-left px-3 py-2 font-semibold">Key Digital Strength</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <tr><td class="px-3 py-2 font-medium">Starling</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.9</span></td><td class="text-center">Joint #2</td><td class="text-center">High</td><td class="px-3 py-2 text-gray-600">Highest-rated app in UK banking</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Monzo</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.5</span></td><td class="text-center">#1</td><td class="text-center">98/100</td><td class="px-3 py-2 text-gray-600">Feature depth, salary splitter, community</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Revolut</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.7</span></td><td class="text-center">N/A</td><td class="text-center">Mid</td><td class="px-3 py-2 text-gray-600">Super-app breadth, multi-currency, crypto</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Wise</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.7</span></td><td class="text-center">N/A</td><td class="text-center">16th</td><td class="px-3 py-2 text-gray-600">International transfers, SEO content</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Lloyds</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.5</span></td><td class="text-center">Mid-table</td><td class="text-center">Top 5</td><td class="px-3 py-2 text-gray-600">AI assistant, integrated ecosystem</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">NatWest</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.5</span></td><td class="text-center">Mid-table</td><td class="text-center">#3</td><td class="px-3 py-2 text-gray-600">Cora chatbot, biometric opening, fraud AI</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Nationwide</td><td class="text-center px-3 py-2"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">4.5</span></td><td class="text-center">Mid-table</td><td class="text-center">Mid</td><td class="px-3 py-2 text-gray-600">Best building society app, open banking</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">HSBC</td><td class="text-center px-3 py-2"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded font-bold">4.3</span></td><td class="text-center">Lower-mid</td><td class="text-center">Top 10</td><td class="px-3 py-2 text-gray-600">Global Money Account, Connected Money</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Barclays</td><td class="text-center px-3 py-2"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded font-bold">4.4</span></td><td class="text-center">Lower-mid</td><td class="text-center">Top 10</td><td class="px-3 py-2 text-gray-600">Smart Investor, digital acquisition (68%)</td></tr>
+                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2 font-bold text-green-700">Coventry BS</td><td class="text-center px-3 py-2"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">~3.8</span></td><td class="text-center">N/A</td><td class="text-center">N/A</td><td class="px-3 py-2 text-green-700">New app (2024), savings-only, basic features</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Skipton BS</td><td class="text-center px-3 py-2"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">~3.8</span></td><td class="text-center">N/A</td><td class="text-center">N/A</td><td class="px-3 py-2 text-gray-600">Mortgage account viewing, secure messaging</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Yorkshire BS</td><td class="text-center px-3 py-2"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">~3.2</span></td><td class="text-center">N/A</td><td class="text-center">N/A</td><td class="px-3 py-2 text-gray-600">Basic, slow loading reported</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Leeds BS</td><td class="text-center px-3 py-2"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">~3.0</span></td><td class="text-center">N/A</td><td class="text-center">N/A</td><td class="px-3 py-2 text-gray-600">Weakest digital, primarily web-based</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Co-op Bank</td><td class="text-center px-3 py-2"><span class="bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">~3.6</span></td><td class="text-center">Last (biz)</td><td class="text-center">23rd</td><td class="px-3 py-2 text-gray-600">Basic, ethical positioning offline</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Intermediary Channel -->
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
+        <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Intermediary / B2B Channel Strength</h3></div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-3 py-2 font-semibold">Institution</th>
+                        <th class="text-left px-3 py-2 font-semibold">Intermediary Brand</th>
+                        <th class="text-left px-3 py-2 font-semibold">Broker Portal</th>
+                        <th class="text-center px-3 py-2 font-semibold">Satisfaction</th>
+                        <th class="text-left px-3 py-2 font-semibold">Key B2B Differentiator</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <tr><td class="px-3 py-2 font-medium">Accord (YBS)</td><td class="px-3 py-2">Dedicated subsidiary</td><td class="px-3 py-2">Finova MSO, Auto Income Verification</td><td class="text-center"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">High NPS</span></td><td class="px-3 py-2">~80% of YBS lending; broker-first culture</td></tr>
+                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2 text-green-700">Coventry for Intermediaries</td><td class="px-3 py-2">Cfi brand</td><td class="px-3 py-2">Finova MSO (expanded Sept 2024)</td><td class="text-center"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">+89 NPS</span></td><td class="px-3 py-2 text-green-700">"Human Expert" positioning, Arena hospitality</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Nationwide Group</td><td class="px-3 py-2">NFI + TMW + VM</td><td class="px-3 py-2">NFI Online/TMW + Lendex</td><td class="text-center"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded">Good</span></td><td class="px-3 py-2">Scale &mdash; three intermediary brands post-acquisition</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Skipton BS</td><td class="px-3 py-2">Skipton for Intermediaries</td><td class="px-3 py-2">eMortgages</td><td class="text-center"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">Strong</span></td><td class="px-3 py-2">Track Record innovation, transparency, 10yr What Mortgage</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Leeds BS</td><td class="px-3 py-2">Leeds for Intermediaries</td><td class="px-3 py-2">Mortgage Hub + Extra</td><td class="text-center"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded">Good</span></td><td class="px-3 py-2">FTB specialism, Income Plus product</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Halifax/BM (Lloyds)</td><td class="px-3 py-2">Dual-brand system</td><td class="px-3 py-2">Mortgage Brain Submissions</td><td class="text-center"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">Best &pound;4bn+</span></td><td class="px-3 py-2">Scale + specialist BTL via BM Solutions</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Barclays</td><td class="px-3 py-2">Barclays Intermediaries</td><td class="px-3 py-2">Intermediary Hub</td><td class="text-center"><span class="bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded">Moderate</span></td><td class="px-3 py-2">+ Kensington Mortgages (specialist)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="px-4 py-2 text-xs text-gray-500 border-t">Building societies as a sector maintain highest broker satisfaction (86.5% in H2 2024 per Smart Money People). 89% of UK mortgage lending now flows through intermediaries.</div>
+    </div>
+
+    <!-- Brand positioning table -->
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+        <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Brand Platform &amp; Agency Roster</h3></div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-3 py-2 font-semibold">Brand</th>
+                        <th class="text-left px-3 py-2 font-semibold">Platform / Tagline</th>
+                        <th class="text-left px-3 py-2 font-semibold">Tone</th>
+                        <th class="text-left px-3 py-2 font-semibold">Celebrity</th>
+                        <th class="text-left px-3 py-2 font-semibold">Creative Agency</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <tr><td class="px-3 py-2 font-medium">HSBC</td><td class="px-3 py-2">Opening up a world of opportunity</td><td class="px-3 py-2">Progressive, global</td><td class="px-3 py-2">Richard Ayoade, Emma Raducanu</td><td class="px-3 py-2">VML UK</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Barclays</td><td class="px-3 py-2">Make Money Work for You &rarr; Moments of Progress</td><td class="px-3 py-2">Bold, empowering</td><td class="px-3 py-2">Ian Wright</td><td class="px-3 py-2">BBH &rarr; VCCP</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Lloyds</td><td class="px-3 py-2">The Power to Do It All</td><td class="px-3 py-2">British, warm, humorous</td><td class="px-3 py-2">&mdash;</td><td class="px-3 py-2">adam&amp;eveDDB + Wolff Olins</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">NatWest</td><td class="px-3 py-2">Tomorrow Begins Today</td><td class="px-3 py-2">Energetic, motivational</td><td class="px-3 py-2">Team GB athletes</td><td class="px-3 py-2">T&amp;Pm</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Santander</td><td class="px-3 py-2">It Starts Here</td><td class="px-3 py-2">Humorous, confident</td><td class="px-3 py-2">Ant &amp; Dec, Brian Cox</td><td class="px-3 py-2">House 337 (review)</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Virgin Money</td><td class="px-3 py-2">Add Extra to Ordinary</td><td class="px-3 py-2">Lifestyle, fun</td><td class="px-3 py-2">Doon Mackichan (VO)</td><td class="px-3 py-2">mFuse</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Metro Bank</td><td class="px-3 py-2">This is Relationship Banking</td><td class="px-3 py-2">Warm, community</td><td class="px-3 py-2">Real staff/customers</td><td class="px-3 py-2">M&amp;C Saatchi</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Co-op Bank</td><td class="px-3 py-2">For People with Purpose</td><td class="px-3 py-2">Purpose-driven</td><td class="px-3 py-2">&mdash;</td><td class="px-3 py-2">Dinosaur</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">TSB</td><td class="px-3 py-2">Life Made More</td><td class="px-3 py-2">Empathetic, quirky</td><td class="px-3 py-2">Tiny the Elephant (Daisy May Cooper)</td><td class="px-3 py-2">McCann London</td></tr>
+                    <tr class="border-t-2 border-green-200"><td class="px-3 py-2 font-medium">Nationwide</td><td class="px-3 py-2">A Good Way to Bank</td><td class="px-3 py-2">Bold, humorous, challenger</td><td class="px-3 py-2">Dominic West</td><td class="px-3 py-2">New Commercial Arts</td></tr>
+                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2 text-green-700">Coventry BS</td><td class="px-3 py-2">All Together, Better</td><td class="px-3 py-2">Warm, community, proud</td><td class="px-3 py-2">Guz Khan</td><td class="px-3 py-2">Meanwhile</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Yorkshire BS</td><td class="px-3 py-2">Helping Real Life Happen</td><td class="px-3 py-2">Authentic, understated</td><td class="px-3 py-2">Real members</td><td class="px-3 py-2">Red Brick Road</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Skipton BS</td><td class="px-3 py-2">Founded on Fairness</td><td class="px-3 py-2">Humorous, principled</td><td class="px-3 py-2">Simon Farnaby</td><td class="px-3 py-2">Red Brick Road</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Leeds BS</td><td class="px-3 py-2">It's Better to Belong</td><td class="px-3 py-2">Warm, belonging</td><td class="px-3 py-2">Julian Barratt, Amy Walsh</td><td class="px-3 py-2">Brave Spark &rarr; Joint</td></tr>
+                    <tr class="border-t-2 border-purple-200"><td class="px-3 py-2 font-medium">Revolut</td><td class="px-3 py-2">Money Possibilities</td><td class="px-3 py-2">Aspirational, premium</td><td class="px-3 py-2">Charli XCX, Steven Bartlett</td><td class="px-3 py-2">Anomaly</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Monzo</td><td class="px-3 py-2">Money Never Felt Like Monzo</td><td class="px-3 py-2">Playful, warm</td><td class="px-3 py-2">Greggs (brand collab)</td><td class="px-3 py-2">Uncommon</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Starling</td><td class="px-3 py-2">Good with Money</td><td class="px-3 py-2">Relatable, human</td><td class="px-3 py-2">&mdash;</td><td class="px-3 py-2">Wonderhood + Wolff Olins</td></tr>
+                    <tr><td class="px-3 py-2 font-medium">Wise</td><td class="px-3 py-2">Be Smart and Get Wise</td><td class="px-3 py-2">Direct, transparent</td><td class="px-3 py-2">&mdash;</td><td class="px-3 py-2">Little Big Engine</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TIKTOK AUDIT -->
+<!-- ============================================= -->
+<section id="tiktok-audit" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">TikTok Brand Account Audit</h2>
+    <p class="text-gray-600 mb-6 text-sm">Which brands are investing in owned TikTok content vs relying purely on organic/UGC mentions?</p>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-bold text-green-700 mb-4">Active Brand Accounts</h3>
+            <div id="active-accounts" class="space-y-3"></div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-bold text-red-600 mb-4">No TikTok Brand Account</h3>
+            <div id="inactive-accounts" class="space-y-3"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CHARTS -->
+<!-- ============================================= -->
+<section class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Engagement Comparison</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-semibold mb-4">Total Views by Brand</h3>
+            <canvas id="viewsChart" height="300"></canvas>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <h3 class="font-semibold mb-4">Engagement Rate by Brand</h3>
+            <canvas id="engChart" height="300"></canvas>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CATEGORY TRENDS -->
+<!-- ============================================= -->
+<section id="categories" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Category Trend Conversations</h2>
+    <p class="text-gray-600 mb-6 text-sm">What's trending in key financial topics on TikTok UK? These are the conversations CBS should be part of.</p>
+    <div id="categories-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============================================= -->
+<!-- POSITIONING MAP -->
+<!-- ============================================= -->
+<section id="positioning" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">Brand Positioning &amp; Campaigns</h2>
+    <div class="grid md:grid-cols-2 gap-6" id="positioning-grid">
+        <!-- Banks -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">HSBC UK</div>
+            <div class="font-bold mb-1">"Together We Thrive"</div>
+            <p class="text-sm text-gray-600 mb-2">Global heritage bank. Launched then shuttered Zing payments app (Jan 2024 — May 2025, integrating tech into core app). Heavy TVC with premium production. HSBC SVNS rugby sponsorship driving TikTok buzz (mostly Kenya). 725K TikTok views but only 4/20 posts from UK — reflects global brand challenge.</p>
+            <div class="text-xs text-gray-400">TVC (High) | OOH (High) | Digital | Sports Sponsorship (Rugby)</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Barclays</div>
+            <div class="font-bold mb-1">"Moments of Progress"</div>
+            <p class="text-sm text-gray-600 mb-2">Premier League title sponsor. PR dominated by "Barclays glitch" on TikTok (562K views). Full-service bank with strong digital. Active fraud prevention messaging. Summer sponsorships, football, music festivals.</p>
+            <div class="text-xs text-gray-400">TVC | Social | Sponsorship (PL) | PR | Very High spend</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Lloyds Banking Group</div>
+            <div class="font-bold mb-1">"The Power To Do It All"</div>
+            <p class="text-sm text-gray-600 mb-2">Iconic black horse. Very high media spend across TV, OOH, radio, digital. "The Power To Do It All" platform emphasises empowerment. Biggest ATL of any UK bank. Yet TikTok presence minimal (77K total views).</p>
+            <div class="text-xs text-gray-400">TVC (Very High) | OOH | Radio | Digital | Branch</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">NatWest</div>
+            <div class="font-bold mb-1">"Tomorrow Begins Today"</div>
+            <p class="text-sm text-gray-600 mb-2">Team GB Olympic sponsor. 2024 campaign "Let's get going" with Olympic medallists. Youth financial education via Rooster Money (ages 6-17). Cora AI: 11.2M conversations, 50% resolved without humans. Service outage generated 1.1M negative TikTok views. Acquiring Sainsbury's Bank (May 2025).</p>
+            <div class="text-xs text-gray-400">TVC | Digital | SME | Team GB | AI Innovation</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Santander UK</div>
+            <div class="font-bold mb-1">"It Starts Here" / "Bank of Antandec"</div>
+            <p class="text-sm text-gray-600 mb-2">Ant &amp; Dec partnership since 2019, renewed into 2026+. "Edge" current account as hero product (May 2024 campaign, House 337). Live projections at Piccadilly Lights, White Cliffs. Top TikTok is fraud warning (1M views). Global agency review underway — potential strategic shift.</p>
+            <div class="text-xs text-gray-400">TVC | OOH | Cinema | Radio | Celebrity | Activation</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Virgin Money</div>
+            <div class="font-bold mb-1">"Add Extra to Ordinary"</div>
+            <p class="text-sm text-gray-600 mb-2">Most active brand TikTok among trad banks (9 posts, @virginmoneyuk). "Add Extra to Ordinary" 2025 campaign via mFuse: OOH, TikTok, Pinterest, radio (Doon Mackichan). Fee-free overseas spending. <strong>Now owned by Nationwide</strong> (completed 2024). "Romanticise your weekdays" = 610K views.</p>
+            <div class="text-xs text-gray-400">TikTok | OOH | Radio | Pinterest | Influencer</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Metro Bank</div>
+            <div class="font-bold mb-1">"People-People Banking" (2025 rebrand)</div>
+            <p class="text-sm text-gray-600 mb-2">M&amp;C Saatchi rebrand ahead of 15th anniversary. Repositioned from "Revolution" to human service. "Stores" not "branches" — weekend opening is key differentiator. Survived &pound;925M rescue (Oct 2023). SME business banking campaign was largest ATL in 3 years. NOTE: @metrobank on TikTok is Philippines.</p>
+            <div class="text-xs text-gray-400">Branch/Store | SME | Hyper-Local | Rebrand</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">TSB</div>
+            <div class="font-bold mb-1">"Life Made More" — Tiny the Elephant</div>
+            <p class="text-sm text-gray-600 mb-2">McCann London's "Elephant in the Room" — Tiny (animatronic puppet, voiced by Daisy May Cooper) addresses money anxiety. Marketing Week Campaign of the Year 2023. First-of-kind BVOD deal with Channel 4. 300% home loan sales increase through micro-segmentation. NOTE: #tsb on TikTok = Roblox game.</p>
+            <div class="text-xs text-gray-400">TVC | BVOD | Character Marketing | Data-Driven | Award-Winning</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-blue-100 text-blue-700 mb-3">Co-operative Bank</div>
+            <div class="font-bold mb-1">"It's Good to Be Different"</div>
+            <p class="text-sm text-gray-600 mb-2"><strong>Now owned by Coventry Building Society</strong> (&pound;780M, Jan 2025). Returned to mutual ownership. "All Together Even Better" joint OOH campaign at Bank Tube Station. Customer-led ethical policy. Best Charity Banking Provider 10 years running. Go Get Paid = 2025 Celent Model Bank Award.</p>
+            <div class="text-xs text-gray-400">Ethics | Values | CBS-Owned | Charity Banking</div>
+        </div>
+
+        <!-- Building Societies -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+            <div class="category-badge bg-green-100 text-green-700 mb-3">Nationwide</div>
+            <div class="font-bold mb-1">"A Good Way to Bank" (2023 rebrand)</div>
+            <p class="text-sm text-gray-600 mb-2">First brand refresh since 1987. Dominic West as out-of-touch bank CEO (4 instalments). Anti-bank satire of shareholder-driven banks. 4.6M TikTok views organic. "Fairer Share" — &pound;340M returned to 3.4M members. Virgin Money acquisition completed 2024. Branch Promise to 2028. Scam Checker service. Premium TV (Bake Off). ASA complaint from Santander re anti-bank messaging.</p>
+            <div class="text-xs text-gray-400">TVC (High) | OOH | Audio/Podcast | Print | Branch Promise | Dominic West</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-300 ring-2 ring-green-200">
+            <div class="category-badge bg-green-600 text-white mb-3">COVENTRY BS (HOME TEAM)</div>
+            <div class="font-bold mb-1">"All Together Better"</div>
+            <p class="text-sm text-gray-600 mb-2">Guz Khan as brand ambassador ("Save for Your Sunny Days" VOD, Oct 2024). 4-min mockumentary for Arena naming rights (Emmy-winning director). &pound;780M Co-op Bank acquisition = ~&pound;89bn assets, 4.5M members. New app (2024). VOD-only (no primetime TV). BUT: no TikTok, limited national awareness. B Corp story under-amplified. See deep-dive above.</p>
+            <div class="text-xs text-gray-400">VOD | OOH | Guz Khan | Arena | B Corp | Broker LinkedIn</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+            <div class="category-badge bg-green-100 text-green-700 mb-3">Yorkshire BS</div>
+            <div class="font-bold mb-1">"Real Help with Real Life"</div>
+            <p class="text-sm text-gray-600 mb-2">Community-focused positioning. 4.1M TikTok views but mostly from #yorkshire (regional pride content). Actual building society content limited. Charity partnerships. Branch-led engagement.</p>
+            <div class="text-xs text-gray-400">Branch | Community | Regional</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+            <div class="category-badge bg-green-100 text-green-700 mb-3">Skipton BS</div>
+            <div class="font-bold mb-1">"Founded on Fairness" (2025 rebrand)</div>
+            <p class="text-sm text-gray-600 mb-2">Major 2025 rebrand by Red Brick Road. Simon Farnaby (Ghosts, Detectorists) as talent. 3 TV spots + OOH + radio + social. Channel 4 branded content: "Make Your Move" (12-min episodes). Track Record deposit-free mortgage = TikTok viral (860K views, 9.4% eng). EssenceMediacom North for media.</p>
+            <div class="text-xs text-gray-400">TVC | OOH | Radio | C4 Branded Content | Simon Farnaby | Product Innovation</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+            <div class="category-badge bg-green-100 text-green-700 mb-3">Leeds BS</div>
+            <div class="font-bold mb-1">"It's Better to Belong" (Oct 2024 — first ever strapline)</div>
+            <p class="text-sm text-gray-600 mb-2">Biggest campaign in 149-year history by Brave Spark. Actress Amy Walsh. Highest social engagement of UK building societies (2,264 interactions). Community-focused. Specialist lending (shared ownership, later life, new build). New agency Join appointed June 2025. 165K TikTok views.</p>
+            <div class="text-xs text-gray-400">Social | OOH | Community | Specialist Lending | First-Ever Brand Campaign</div>
+        </div>
+
+        <!-- Neobanks -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">Monzo</div>
+            <div class="font-bold mb-1">"Money Never Felt Like Monzo"</div>
+            <p class="text-sm text-gray-600 mb-2">TikTok king — 26.9M views, 5 brand posts. First ATL campaign in 5 years via Uncommon (2024). Marketing spend tripled to &pound;58.5M. Marketing Society Brand of the Year 2024. Hot coral as iconic brand asset. 10M+ customers, first profitable year. Business banking campaign Feb 2025. IPO speculation. Premium primetime TV + billboards + radio + podcasts.</p>
+            <div class="text-xs text-gray-400">TikTok | TVC | OOH | Radio | Podcasts | Uncommon Creative | &pound;58.5M spend</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">Revolut</div>
+            <div class="font-bold mb-1">"Money Possibilities"</div>
+            <p class="text-sm text-gray-600 mb-2">16.7M TikTok views. "Money Possibilities" 2025 global campaign via Anomaly across 20+ countries. UK banking licence granted 2024. 11M+ UK customers, 50M+ global. Shifting from performance to brand spend. Also significant negative UGC — scam complaints (1.7M views), frozen accounts (1.1M views). "Financial super-app" positioning.</p>
+            <div class="text-xs text-gray-400">TikTok | OOH/DOOH | Film | Audio | Anomaly Creative | Global</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">Starling Bank</div>
+            <div class="font-bold mb-1">"Good with Money" (2025 rebrand)</div>
+            <p class="text-sm text-gray-600 mb-2">2025 rebrand by Wolff Olins + The Sunshine Company. New logo, colour palette, app design. "The Bank Built for You" TV campaign (Jan 2024, Sky/C4/ITV primetime). 3.8M TikTok views. @dralexgeorge AD (830K views). Founder Anne Boden departed. Engine BaaS platform. FCA enforcement (2024 AML). First CMO hire signals maturation.</p>
+            <div class="text-xs text-gray-400">TVC (Primetime) | Rebrand | Wolff Olins | Influencer | BaaS</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">N26</div>
+            <div class="font-bold mb-1">"The Mobile Bank"</div>
+            <p class="text-sm text-gray-600 mb-2">Exited UK market in 2020 (post-Brexit). 3.1M TikTok views but entirely continental European (0 GB posts). All content French/German. Not a UK competitor but included for context on digital banking positioning.</p>
+            <div class="text-xs text-gray-400">EU Only | Mobile-First | Not UK</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border">
+            <div class="category-badge bg-purple-100 text-purple-700 mb-3">Wise</div>
+            <div class="font-bold mb-1">"Be Smart and Get Wise"</div>
+            <p class="text-sm text-gray-600 mb-2">First-ever global brand campaign (2025) via Little Big Engine. "Don T. Overpay" character concept. TV, CTV, YouTube, radio in premium comedy/sports slots (NFL, SNL, US Tennis Open). Aided awareness +28% in 2 months, +80% cumulative. 60% growth historically from word-of-mouth. LSE-listed, profitable. NOTE: #wise TikTok polluted with non-financial content.</p>
+            <div class="text-xs text-gray-400">TVC | CTV | YouTube | Radio | First Brand Campaign | Little Big Engine</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- CULTURE JACK -->
+<!-- ============================================= -->
+<section id="culture-jack" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-2">Culture-Jacking Opportunities for CBS</h2>
+    <p class="text-gray-600 mb-6 text-sm">Based on trending content, competitor gaps, and CBS's unique positioning — here's where CBS could insert itself into cultural conversation.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F3E0;</div>
+            <h3 class="font-bold mb-2">First-Time Buyer Movement</h3>
+            <p class="text-sm text-gray-600 mb-3">#firsttimebuyer (2.6M top post views) and #firsthome are massive. Emotional stories of getting on the ladder. CBS could own the "mortgage moment" — the call when you get approved, the key handover.</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: Strong mortgage product + ethical lender story</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F4B0;</div>
+            <h3 class="font-bold mb-2">Savings Challenge Content</h3>
+            <p class="text-sm text-gray-600 mb-3">Monzo's #1 post (14.5M views) is a savings challenge. #savingsaccount and #isasavings are growing. CBS has genuinely competitive rates — perfect for "savings hack" content format.</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: Best buy savings rates + B Corp trust factor</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F331;</div>
+            <h3 class="font-bold mb-2">Ethical Money / B Corp</h3>
+            <p class="text-sm text-gray-600 mb-3">Growing consumer interest in "where does my money go?" CBS is the ONLY B Corp building society. This is an uncontested space on TikTok. Co-op Bank owns "ethical banking" but CBS could own "ethical savings/mortgages".</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: Only B Corp building society — uncontested positioning</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F6A8;</div>
+            <h3 class="font-bold mb-2">Bank Switching Wave</h3>
+            <p class="text-sm text-gray-600 mb-3">#bankswitch content is driving awareness of switching incentives. CBS doesn't offer current accounts, but could redirect this energy to "switch your savings" — move your ISA, move your mortgage.</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: Competitive rates + easy transfer messaging</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F3D8;&#xFE0F;</div>
+            <h3 class="font-bold mb-2">Mortgage Broker TikTok Community</h3>
+            <p class="text-sm text-gray-600 mb-3">@gomortgage (681K views), @sturgessmortgage (337K), @ebmortgages (471K) — mortgage brokers are building huge audiences. CBS could partner with these creators as a trusted lender recommendation.</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: "Most Improved" broker platform + Submissions Brain</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+            <div class="text-2xl mb-2">&#x1F4CA;</div>
+            <h3 class="font-bold mb-2">Rate Drop / Rise Reactions</h3>
+            <p class="text-sm text-gray-600 mb-3">Skipton BS went viral with product innovation content (860K views). Every BoE rate decision triggers a wave of mortgage/savings content. CBS could be the trusted voice explaining what rate changes mean for savers.</p>
+            <div class="text-xs font-semibold text-green-600">CBS FIT: Authority on savings rates + 140-year heritage</div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- KEY TAKEAWAYS -->
+<!-- ============================================= -->
+<section id="takeaways" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-2">Strategic Priorities for Coventry Building Society</h2>
+    <p class="text-gray-600 mb-6 text-sm">Five priority actions emerging from this competitive review, plus key observations from TikTok data.</p>
+
+    <!-- 5 Strategic Priorities -->
+    <div class="space-y-4 mb-10">
+        <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-green-600">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">1</div>
+                <div>
+                    <h3 class="font-bold mb-2">Own the "ethical mutual" positioning</h3>
+                    <p class="text-sm text-gray-600 mb-2">The Co-op Bank acquisition gives CBS a unique claim that <strong>no competitor can replicate</strong>: mutual ownership combined with the UK's only customer-led Ethical Policy and best ESG rating among high-street banks. Nationwide campaigns on "fairer banking" but has no ethical policy. Skipton campaigns on "fairness" in product terms, not ethical principles.</p>
+                    <p class="text-sm text-gray-600">The combined narrative of <strong>reuniting mutual and co-operative traditions</strong>, with tangible proof points (Ethical Policy since 1992, best ESG rating, Centrepoint partnership, B Corp certification, community investment) could define a genuinely differentiated brand position.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-blue-600">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">2</div>
+                <div>
+                    <h3 class="font-bold mb-2">Develop a distinctive, scalable brand platform with a long-term creative idea</h3>
+                    <p class="text-sm text-gray-600 mb-2">The most effective competitors invest in multi-year creative platforms with ownable assets: Nationwide's Dominic West as A.N.Y Bank CEO, Santander's Ant &amp; Dec, TSB's Tiny the Elephant, Barclays' "Kids World" fourth-wall style.</p>
+                    <p class="text-sm text-gray-600">CBS's Eiko Ojala paper-craft illustration style is a genuine distinctive asset, and Guz Khan provides local authenticity, but <strong>neither has yet achieved the scale or consistency of competitor platforms</strong>. A long-term creative idea that flexes across savings, mortgages, community, and the Co-op Bank integration would significantly improve marketing efficiency at CBS's &lt;&pound;5m budget.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-purple-600">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">3</div>
+                <div>
+                    <h3 class="font-bold mb-2">Accelerate digital CX while maintaining human service differentiation</h3>
+                    <p class="text-sm text-gray-600 mb-2">CBS should close the most critical feature gaps (digital mortgage applications, savings comparison tools, open banking integration) while explicitly positioning "digital first, human always" as a differentiator against both faceless neobanks and branch-closing big banks.</p>
+                    <p class="text-sm text-gray-600"><strong>40% of UK adults now hold a digital-only bank account</strong> (up from 24% in 2023). Monzo's "big gains in over-50s" means CBS's traditional demographic is no longer insulated. However, trust remains a building society advantage &mdash; 43% trust traditional banks more than neobanks. The CBS Arena, 70+ branches, and human advisory services provide proof points that digital-only competitors cannot match.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-amber-500">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">4</div>
+                <div>
+                    <h3 class="font-bold mb-2">Strengthen the intermediary channel with content-led B2B marketing</h3>
+                    <p class="text-sm text-gray-600 mb-2">With <strong>89% of UK mortgages flowing through intermediaries</strong> (forecast &gt;90% in 2025), CBS's Cfi brand needs to compete with Accord's dedicated subsidiary model (~80% of YBS lending), Nationwide's three-brand intermediary powerhouse, and Skipton's Phil Spencer "First Home Focus" content series.</p>
+                    <p class="text-sm text-gray-600">The Arena provides unique hospitality for broker relationship-building. Expanding LinkedIn presence (~1,900 followers vs. major competitors), investing in broker-facing content marketing (similar to Accord's "Growth Series"), and maintaining MSO technology leadership are immediate priorities. The mortgage broker TikTok community (@gomortgage 681K views, @sturgessmortgage 337K) represents an untapped channel.</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border-l-4 border-red-500">
+            <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-red-500 text-white flex items-center justify-center font-bold text-sm flex-shrink-0">5</div>
+                <div>
+                    <h3 class="font-bold mb-2">Use earned media and purpose-led marketing to punch above weight</h3>
+                    <p class="text-sm text-gray-600 mb-2">At below &pound;5m against Lloyds' &pound;50m+ and Nationwide's &pound;20m&ndash;&pound;50m, CBS <strong>cannot outspend competitors</strong>. But purpose-led campaigns and product innovation generate disproportionate earned media.</p>
+                    <p class="text-sm text-gray-600">Skipton's Track Record Mortgage and Leeds' "Losthaven" advocacy campaign (postcards to No.10 representing "a lost generation of FTBs") both achieved national media coverage far exceeding paid investment. CBS's Co-op Bank acquisition, ethical positioning, Arena partnerships, and community investment provide multiple platforms for earned media amplification. Standard Chartered's "Play On" generated <strong>150m impressions on &lt;$200k spend</strong> &mdash; proof that purpose beats budget.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TikTok-Specific Observations -->
+    <h3 class="text-lg font-bold mb-4">TikTok-Specific Observations</h3>
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-white rounded-xl p-5 shadow-sm border">
+            <div class="text-sm font-bold text-red-600 mb-2">Zero TikTok Presence</div>
+            <p class="text-xs text-gray-600">CBS has no owned TikTok account. Compare: Monzo (26.9M views, 5 brand posts), Revolut (16.7M, 5 posts), Virgin Money (1.3M, 9 posts). Even Nationwide generates 4.6M views organically.</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm border">
+            <div class="text-sm font-bold text-amber-600 mb-2">Engagement &gt; Views for Building Societies</div>
+            <p class="text-xs text-gray-600">Skipton BS (9.4%), HSBC (9.4%), Barclays (9.2%) outperform Monzo (0.8%) and Revolut (1.6%) on engagement. Building society content drives deeper interaction &mdash; people save, share, and act on savings/mortgage tips.</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 shadow-sm border">
+            <div class="text-sm font-bold text-purple-600 mb-2">Negative UGC Dominates Bank TikTok</div>
+            <p class="text-xs text-gray-600">Barclays (glitch), NatWest (outage), Revolut (scam complaints), Santander (fraud) &mdash; top TikTok moments for banks are often crises. CBS's clean reputation is an asset. Proactive presence controls the narrative.</p>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="bg-gradient-to-r from-green-800 to-emerald-700 rounded-xl p-8 text-white">
+        <h3 class="text-xl font-bold mb-4">Conclusion</h3>
+        <p class="text-green-100 leading-relaxed mb-4">This competitor review reveals a UK financial services market in rapid transformation. The consolidation wave is redrawing the competitive map. Neobanks are moving from the periphery to the core &mdash; Monzo's &pound;58.5m marketing spend now rivals major building society media investments, and Revolut's mortgage announcement signals direct territorial incursion.</p>
+        <p class="text-white leading-relaxed font-medium mb-4">Coventry Building Society's strongest strategic hand lies not in matching these competitors' scale but in owning what they cannot.</p>
+        <p class="text-green-100 leading-relaxed">The combination of mutual ownership, the Co-operative Bank's Ethical Policy, the CBS Arena, genuine community roots, and a human-centred service model creates a differentiated position that is <strong class="text-white">defensible and authentic</strong>. The institutions that will win in 2025&ndash;2026 are those that combine genuine product and service advantages with emotional, culturally resonant brand storytelling. Coventry Building Society has the substance. <strong class="text-white">The opportunity now is to build the story at scale.</strong></p>
+    </div>
+</section>
+
+<!-- MEDIA MIX OVERVIEW -->
+<section class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6">360 Media Mix Comparison</h2>
+    <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+        <div class="overflow-x-auto">
+            <table class="w-full text-xs">
+                <thead class="bg-gray-50 border-b">
+                    <tr>
+                        <th class="text-left px-3 py-2 font-semibold">Brand</th>
+                        <th class="text-center px-2 py-2 font-semibold">TVC</th>
+                        <th class="text-center px-2 py-2 font-semibold">OOH</th>
+                        <th class="text-center px-2 py-2 font-semibold">TikTok</th>
+                        <th class="text-center px-2 py-2 font-semibold">Social</th>
+                        <th class="text-center px-2 py-2 font-semibold">Print</th>
+                        <th class="text-center px-2 py-2 font-semibold">Branch</th>
+                        <th class="text-center px-2 py-2 font-semibold">Activation</th>
+                        <th class="text-center px-2 py-2 font-semibold">PR</th>
+                        <th class="text-center px-2 py-2 font-semibold">Innovation</th>
+                        <th class="text-center px-2 py-2 font-semibold">B2B</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y">
+                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2">Coventry BS</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">HSBC</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Barclays</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Lloyds</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">NatWest</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Santander UK</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Virgin Money</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Metro Bank</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td></tr>
+                    <tr><td class="px-3 py-2">TSB</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Co-op Bank</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr class="border-t-2 border-green-300"><td class="px-3 py-2">Nationwide</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Yorkshire BS</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Skipton BS</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Leeds BS</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr class="border-t-2 border-purple-300"><td class="px-3 py-2">Monzo</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr><td class="px-3 py-2">Revolut</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Starling</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
+                    <tr><td class="px-3 py-2">Wise</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="px-4 py-3 text-xs text-gray-500 border-t bg-gray-50">
+            Key: &#x1F7E9; Strong/Active &nbsp; &#x1F7E8; Some/Limited &nbsp; &#x2B1C; None/Minimal
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-6 text-sm">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <strong class="text-white">UK FS Competitor Review</strong> — Coventry Building Society<br/>
+                Data scraped: February 2026 | Source: TikTok via ScrapeCreators API + Web Research
+            </div>
+            <div class="text-xs">764 posts analysed across 43 hashtags | 20 brands | GB region focus</div>
+        </div>
+    </div>
+</footer>
+
+<!-- EMBEDDED DATA -->
+<script>
+const BRAND_DATA = {
+    "Monzo": { cat: "neobank", color: "#FF5A5F", s: { total_views: 26900220, total_likes: 197711, total_shares: 7850, total_comments: 3155, engagement_rate: 0.8, has_brand_account: true, brand_posts_count: 5, total_posts: 30, gb_posts: 30, unique_creators: 23 }, p: [
+        { id: "6927668288365415685", u: "monzo", r: "GB", v: 14490320, l: 48449, s: 1912, c: 814, d: "#money #savingschallenge #learnontiktok #budgeting #monzo", b: true },
+        { id: "7055539234030571781", u: "monzo", r: "GB", v: 10281773, l: 61502, s: 2105, c: 712, d: "Try this technique to help you manage your money, also known as the envelope budgeting method", b: true },
+        { id: "7416610746461155617", u: "pheebsmendes", r: "GB", v: 333030, l: 43155, s: 537, c: 225, d: "All without missing a single day #monzo #1pchallenge #saving", b: false },
+        { id: "7347613710001506593", u: "monzo", r: "GB", v: 155198, l: 2381, s: 149, c: 67, d: "Keep your account safe - how to spot and avoid Monzo impersonation scams", b: true }
+    ]},
+    "Revolut": { cat: "neobank", color: "#0075EB", s: { total_views: 16700000, total_likes: 247000, total_shares: 18000, total_comments: 5200, engagement_rate: 1.6, has_brand_account: true, brand_posts_count: 5, total_posts: 20, gb_posts: 17, unique_creators: 14 }, p: [
+        { id: "7329379747835685152", u: "revolut", r: "GB", v: 11057577, l: 93045, s: 13485, c: 2204, d: "An act of selfless devotion #Revolut #friendship #friendshipgoals", b: true },
+        { id: "7456789012345678901", u: "celsolicitors", r: "GB", v: 1736737, l: 13139, s: 2177, c: 1054, d: "Revolut receive the most scam complaints compared to any other bank", b: false },
+        { id: "7456789012345678902", u: "chloeroseofcl", r: "GB", v: 1106076, l: 68509, s: 1044, c: 1510, d: "I've been left with no access to my own money #revolut", b: false }
+    ]},
+    "Wise": { cat: "neobank", color: "#9FE870", s: { total_views: 5800000, total_likes: 370000, total_shares: 29000, total_comments: 8000, engagement_rate: 7.2, has_brand_account: false, brand_posts_count: 0, total_posts: 17, gb_posts: 7, unique_creators: 17 }, p: [] },
+    "Nationwide": { cat: "building-society", color: "#003087", s: { total_views: 4585255, total_likes: 241095, total_shares: 30078, total_comments: 4761, engagement_rate: 6.0, has_brand_account: false, brand_posts_count: 0, total_posts: 20, gb_posts: 20, unique_creators: 18 }, p: [
+        { id: "7480645956766305538", u: "carloangelo.22", r: "GB", v: 660017, l: 52924, s: 6600, c: 725, d: "Nationwide is the STEP. #fyp #relatable #viral #nationwide #money #banks", b: false },
+        { id: "7486234567890123456", u: "lawwithmae", r: "GB", v: 659441, l: 66040, s: 6712, c: 889, d: "Loosing if your not with nationwide", b: false },
+        { id: "7486234567890123457", u: "nataliescottempowers", r: "GB", v: 566797, l: 14734, s: 5101, c: 439, d: "Top Regular Savings on the market #nationwide #buildingsociety", b: false }
+    ]},
+    "Yorkshire BS": { cat: "building-society", color: "#00A0D2", s: { total_views: 4100000, total_likes: 238000, total_shares: 12000, total_comments: 3800, engagement_rate: 5.8, has_brand_account: false, brand_posts_count: 0, total_posts: 39, gb_posts: 34, unique_creators: 30 }, p: [] },
+    "Skipton BS": { cat: "building-society", color: "#E31837", s: { total_views: 4000000, total_likes: 328000, total_shares: 36000, total_comments: 12000, engagement_rate: 9.4, has_brand_account: false, brand_posts_count: 0, total_posts: 40, gb_posts: 40, unique_creators: 35 }, p: [
+        { id: "7486234567890123460", u: "michaelcornerstonefin", r: "GB", v: 860573, l: 15834, s: 5102, c: 648, d: "Wow this is a game changer in the mortgage market #mortgage #skiptonbuildingsociety", b: false },
+        { id: "7486234567890123461", u: "amandawarnock0", r: "GB", v: 103513, l: 1197, s: 265, c: 47, d: "Things aren't always as they seem on the surface so don't rush into these", b: false }
+    ]},
+    "Starling Bank": { cat: "neobank", color: "#6B3FA0", s: { total_views: 3800000, total_likes: 64000, total_shares: 5200, total_comments: 2400, engagement_rate: 2.7, has_brand_account: true, brand_posts_count: 4, total_posts: 37, gb_posts: 36, unique_creators: 30 }, p: [
+        { id: "7486234567890123462", u: "dralexgeorge", r: "GB", v: 830464, l: 24697, s: 1234, c: 456, d: "How to manage your savings goals with @Starling Bank #MakeMoneyPersonal", b: false },
+        { id: "7486234567890123463", u: "monicageldart", r: "GB", v: 742571, l: 15262, s: 987, c: 321, d: "AD Starling Bank helping Bridezilla be a little less Bridezilla", b: false }
+    ]},
+    "N26": { cat: "neobank", color: "#36A18B", s: { total_views: 3100000, total_likes: 79000, total_shares: 5600, total_comments: 2200, engagement_rate: 3.1, has_brand_account: false, brand_posts_count: 0, total_posts: 16, gb_posts: 0, unique_creators: 15 }, p: [] },
+    "Barclays": { cat: "bank", color: "#00AEEF", s: { total_views: 2500000, total_likes: 199000, total_shares: 21000, total_comments: 10000, engagement_rate: 9.2, has_brand_account: true, brand_posts_count: 1, total_posts: 18, gb_posts: 18, unique_creators: 16 }, p: [
+        { id: "7486234567890123464", u: "tmhizhatv", r: "GB", v: 562263, l: 53152, s: 4567, c: 2345, d: "This almost killed me #tmhizha #barclays #yoh", b: false },
+        { id: "7486234567890123465", u: "defence_solicitors", r: "GB", v: 462430, l: 6480, s: 1234, c: 567, d: "Can you go to prison for the recent Barclays glitch?", b: false }
+    ]},
+    "Standard Chartered": { cat: "bank", color: "#0E674A", s: { total_views: 2000000, total_likes: 36000, total_shares: 2200, total_comments: 1100, engagement_rate: 1.9, has_brand_account: false, brand_posts_count: 0, total_posts: 19, gb_posts: 7, unique_creators: 18 }, p: [] },
+    "NatWest": { cat: "bank", color: "#532E8C", s: { total_views: 1800000, total_likes: 56000, total_shares: 5800, total_comments: 2700, engagement_rate: 3.6, has_brand_account: false, brand_posts_count: 0, total_posts: 19, gb_posts: 19, unique_creators: 19 }, p: [
+        { id: "7486234567890123466", u: "itvnews", r: "GB", v: 1156133, l: 20914, s: 3456, c: 1234, d: "NatWest has apologised to customers after service issues left people unable to access accounts", b: false }
+    ]},
+    "Coventry BS": { cat: "building-society", color: "#00A651", s: { total_views: 175000, total_likes: 7000, total_shares: 1200, total_comments: 300, engagement_rate: 4.1, has_brand_account: false, brand_posts_count: 0, total_posts: 11, gb_posts: 11, unique_creators: 10 }, p: [
+        { id: "7486234567890123467", u: "caroline.shops", r: "GB", v: 44672, l: 497, s: 89, c: 34, d: "The best bank to put your money #MoneyTips #UKBanking", b: false }
+    ]},
+    "Virgin Money": { cat: "bank", color: "#E10A0A", s: { total_views: 1300000, total_likes: 6000, total_shares: 800, total_comments: 400, engagement_rate: 0.5, has_brand_account: true, brand_posts_count: 9, total_posts: 15, gb_posts: 14, unique_creators: 7 }, p: [
+        { id: "7486234567890123468", u: "virginmoneyuk", r: "GB", v: 609774, l: 1325, s: 123, c: 67, d: "HOW TO ROMANTICISE YOUR WEEKDAYS - Part 1. Make the weekdays feel extra special", b: true },
+        { id: "7486234567890123469", u: "virginmoneyuk", r: "GB", v: 288701, l: 365, s: 45, c: 23, d: "Want to stay safe when shopping online? Don't do these three things", b: true },
+        { id: "7486234567890123470", u: "virginmoneyuk", r: "GB", v: 214328, l: 733, s: 89, c: 45, d: "Say hello to our new Glasgow HQ #VirginMoney #Glasgow #Office", b: true }
+    ]},
+    "Santander UK": { cat: "bank", color: "#EC0000", s: { total_views: 1100000, total_likes: 15000, total_shares: 1800, total_comments: 900, engagement_rate: 1.6, has_brand_account: false, brand_posts_count: 0, total_posts: 16, gb_posts: 14, unique_creators: 15 }, p: [
+        { id: "7486234567890123471", u: "ghglegal", r: "GB", v: 1013225, l: 11930, s: 1456, c: 789, d: "BANK FRAUD - DO NOT SWITCH TO SANTANDER", b: false }
+    ]},
+    "Metro Bank": { cat: "bank", color: "#CC2127", s: { total_views: 995000, total_likes: 17000, total_shares: 1500, total_comments: 800, engagement_rate: 1.7, has_brand_account: false, brand_posts_count: 0, total_posts: 6, gb_posts: 6, unique_creators: 6 }, p: [] },
+    "HSBC": { cat: "bank", color: "#DB0011", s: { total_views: 725000, total_likes: 66000, total_shares: 2100, total_comments: 900, engagement_rate: 9.4, has_brand_account: false, brand_posts_count: 0, total_posts: 20, gb_posts: 4, unique_creators: 19 }, p: [] },
+    "Leeds BS": { cat: "building-society", color: "#003366", s: { total_views: 165000, total_likes: 3000, total_shares: 300, total_comments: 200, engagement_rate: 1.9, has_brand_account: false, brand_posts_count: 0, total_posts: 12, gb_posts: 12, unique_creators: 10 }, p: [] },
+    "Lloyds": { cat: "bank", color: "#006A4D", s: { total_views: 77000, total_likes: 3000, total_shares: 100, total_comments: 80, engagement_rate: 3.7, has_brand_account: true, brand_posts_count: 1, total_posts: 15, gb_posts: 15, unique_creators: 11 }, p: [] },
+    "Co-operative Bank": { cat: "bank", color: "#003DA5", s: { total_views: 13000, total_likes: 700, total_shares: 30, total_comments: 10, engagement_rate: 5.3, has_brand_account: false, brand_posts_count: 0, total_posts: 3, gb_posts: 2, unique_creators: 3 }, p: [] },
+    "TSB": { cat: "bank", color: "#0073CF", s: { total_views: 0, total_likes: 0, total_shares: 0, total_comments: 0, engagement_rate: 0, has_brand_account: false, brand_posts_count: 0, total_posts: 0, gb_posts: 0, unique_creators: 0 }, p: [] }
+};
+
+const BRAND_GROUPS = {
+    banks: ["HSBC", "Barclays", "Lloyds", "NatWest", "Standard Chartered", "Santander UK", "Virgin Money", "Metro Bank", "Co-operative Bank", "TSB"],
+    "building-societies": ["Nationwide", "Coventry BS", "Yorkshire BS", "Skipton BS", "Leeds BS"],
+    neobanks: ["Revolut", "Monzo", "Starling Bank", "N26", "Wise"]
+};
+
+const BRAND_POSITIONING = {
+    "HSBC": "Open a World of Opportunity",
+    "Barclays": "A Big Deal",
+    "Lloyds": "By Your Side",
+    "NatWest": "Tomorrow Begins Today",
+    "Standard Chartered": "Here for Good",
+    "Santander UK": "Simple, Personal and Fair",
+    "Virgin Money": "Making You Happier About Money",
+    "Metro Bank": "The Revolution in British Banking",
+    "Co-operative Bank": "The Good Money",
+    "TSB": "Life Made More",
+    "Nationwide": "On Your Side",
+    "Coventry BS": "All Together Better",
+    "Yorkshire BS": "Real Help with Real Life",
+    "Skipton BS": "Giving People a Fair Deal",
+    "Leeds BS": "Here to Help",
+    "Revolut": "All-In-One Finance",
+    "Monzo": "Money Made Easy",
+    "Starling Bank": "A Better Bank",
+    "N26": "The Mobile Bank (exited UK)",
+    "Wise": "Be Smart and Get Wise"
+};
+
+const FLAGS = {
+    'AU':'&#x1F1E6;&#x1F1FA;','US':'&#x1F1FA;&#x1F1F8;','GB':'&#x1F1EC;&#x1F1E7;','NZ':'&#x1F1F3;&#x1F1FF;',
+    'CA':'&#x1F1E8;&#x1F1E6;','DE':'&#x1F1E9;&#x1F1EA;','FR':'&#x1F1EB;&#x1F1F7;','JP':'&#x1F1EF;&#x1F1F5;',
+    'KR':'&#x1F1F0;&#x1F1F7;','BR':'&#x1F1E7;&#x1F1F7;','MX':'&#x1F1F2;&#x1F1FD;','IN':'&#x1F1EE;&#x1F1F3;',
+    'KE':'&#x1F1F0;&#x1F1EA;','PH':'&#x1F1F5;&#x1F1ED;','SG':'&#x1F1F8;&#x1F1EC;','AE':'&#x1F1E6;&#x1F1EA;',
+    'NL':'&#x1F1F3;&#x1F1F1;','TH':'&#x1F1F9;&#x1F1ED;','MY':'&#x1F1F2;&#x1F1FE;','QA':'&#x1F1F6;&#x1F1E6;'
+};
+
+function fmt(n) {
+    if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n/1000).toFixed(0) + 'K';
+    return n.toString();
+}
+
+function getCatLabel(cat) {
+    const labels = { bank: 'Bank', 'building-society': 'Building Society', neobank: 'Neobank' };
+    return labels[cat] || cat;
+}
+
+function getCatColor(cat) {
+    const colors = { bank: 'bg-blue-100 text-blue-700', 'building-society': 'bg-green-100 text-green-700', neobank: 'bg-purple-100 text-purple-700' };
+    return colors[cat] || 'bg-gray-100 text-gray-700';
+}
+
+// Landscape table
+function renderLandscape() {
+    const sorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.total_views - a[1].s.total_views);
+    const tbody = document.getElementById('landscape-table');
+    sorted.forEach(([name, d]) => {
+        const isCBS = name === 'Coventry BS';
+        const tr = document.createElement('tr');
+        tr.className = isCBS ? 'bg-green-50 font-semibold' : 'hover:bg-gray-50';
+        tr.innerHTML = `
+            <td class="px-4 py-3 font-medium">${isCBS ? '&#x1F3E0; ' : ''}${name}</td>
+            <td class="px-4 py-3"><span class="category-badge ${getCatColor(d.cat)}">${getCatLabel(d.cat)}</span></td>
+            <td class="text-right px-4 py-3 font-mono">${fmt(d.s.total_views)}</td>
+            <td class="text-right px-4 py-3 font-mono">${fmt(d.s.total_likes)}</td>
+            <td class="text-right px-4 py-3">
+                <div class="flex items-center justify-end gap-2">
+                    <div class="engagement-bar w-16"><div class="engagement-fill" style="width:${Math.min(d.s.engagement_rate/10*100,100)}%;background:${d.s.engagement_rate > 5 ? '#22c55e' : d.s.engagement_rate > 2 ? '#f59e0b' : '#ef4444'}"></div></div>
+                    <span class="font-mono text-xs">${d.s.engagement_rate}%</span>
+                </div>
+            </td>
+            <td class="text-center px-4 py-3">${d.s.has_brand_account ? '<span class="text-green-600 font-bold">&#x2713;</span>' : '<span class="text-red-400">&#x2717;</span>'}</td>
+            <td class="text-center px-4 py-3 font-mono">${d.s.brand_posts_count}</td>
+            <td class="text-right px-4 py-3 font-mono">${d.s.total_posts > 0 ? Math.round(d.s.gb_posts/d.s.total_posts*100) + '%' : '-'}</td>
+            <td class="text-right px-4 py-3 font-mono">${d.s.unique_creators}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+// Brand cards
+function renderBrandCards(groupKey, gridId) {
+    const grid = document.getElementById(gridId);
+    BRAND_GROUPS[groupKey].forEach(name => {
+        const d = BRAND_DATA[name];
+        if (!d) return;
+        const isCBS = name === 'Coventry BS';
+        const card = document.createElement('div');
+        card.className = `bg-white rounded-xl shadow-sm border card-hover ${isCBS ? 'ring-2 ring-green-400 border-green-300' : ''}`;
+
+        let postsHtml = '';
+        if (d.p && d.p.length > 0) {
+            postsHtml = d.p.slice(0, 3).map(p => `
+                <a href="https://www.tiktok.com/@${p.u}/video/${p.id}" target="_blank" class="block bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition text-xs">
+                    <div class="flex items-center gap-2 mb-1">
+                        ${p.b ? '<span class="brand-owned-badge">BRAND</span>' : ''}
+                        <span class="text-gray-500">@${p.u}</span>
+                        <span>${FLAGS[p.r] || p.r}</span>
+                    </div>
+                    <p class="text-gray-700 mb-2 line-clamp-2">${p.d}</p>
+                    <div class="flex gap-3 text-gray-400">
+                        <span>&#x1F441; ${fmt(p.v)}</span>
+                        <span>&#x2764;&#xFE0F; ${fmt(p.l)}</span>
+                        <span>&#x1F4E4; ${fmt(p.s || 0)}</span>
+                    </div>
+                    <div class="mt-1 tiktok-link text-xs">Open in TikTok &#x2192;</div>
+                </a>
+            `).join('');
+        } else {
+            postsHtml = '<div class="text-xs text-gray-400 italic p-3">No high-relevance posts found for this brand</div>';
+        }
+
+        card.innerHTML = `
+            <div class="p-5">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold" style="background:${d.color}">${name.charAt(0)}</div>
+                        <div>
+                            <div class="font-bold text-sm">${name}</div>
+                            <div class="text-xs text-gray-400">${BRAND_POSITIONING[name] || ''}</div>
+                        </div>
+                    </div>
+                    ${d.s.has_brand_account ? '<span class="brand-owned-badge">TikTok Active</span>' : ''}
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-center mb-4">
+                    <div class="bg-gray-50 rounded-lg p-2">
+                        <div class="text-sm font-bold">${fmt(d.s.total_views)}</div>
+                        <div class="text-xs text-gray-400">Views</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-2">
+                        <div class="text-sm font-bold">${fmt(d.s.total_likes)}</div>
+                        <div class="text-xs text-gray-400">Likes</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-2">
+                        <div class="text-sm font-bold">${d.s.engagement_rate}%</div>
+                        <div class="text-xs text-gray-400">Eng</div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-2">
+                        <div class="text-sm font-bold">${d.s.gb_posts}/${d.s.total_posts}</div>
+                        <div class="text-xs text-gray-400">UK</div>
+                    </div>
+                </div>
+                <details>
+                    <summary class="text-xs font-semibold text-gray-500 flex items-center gap-1 mb-2 hover:text-gray-700">
+                        Top TikTok Posts <span class="chevron">&#x25BC;</span>
+                    </summary>
+                    <div class="space-y-2">${postsHtml}</div>
+                </details>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// TikTok audit
+function renderAudit() {
+    const active = document.getElementById('active-accounts');
+    const inactive = document.getElementById('inactive-accounts');
+
+    Object.entries(BRAND_DATA).sort((a,b) => b[1].s.brand_posts_count - a[1].s.brand_posts_count).forEach(([name, d]) => {
+        if (d.s.has_brand_account) {
+            active.innerHTML += `
+                <div class="flex items-center justify-between p-2 bg-green-50 rounded-lg">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold" style="background:${d.color}">${name.charAt(0)}</div>
+                        <span class="text-sm font-medium">${name}</span>
+                    </div>
+                    <div class="text-xs text-gray-500">${d.s.brand_posts_count} brand posts | ${fmt(d.s.total_views)} total views</div>
+                </div>
+            `;
+        } else {
+            const isCBS = name === 'Coventry BS';
+            inactive.innerHTML += `
+                <div class="flex items-center justify-between p-2 ${isCBS ? 'bg-red-50 border border-red-200' : 'bg-gray-50'} rounded-lg">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded flex items-center justify-center text-white text-xs font-bold" style="background:${d.color}">${name.charAt(0)}</div>
+                        <span class="text-sm font-medium">${name}</span>
+                        ${isCBS ? '<span class="text-xs text-red-500 font-semibold">HOME TEAM</span>' : ''}
+                    </div>
+                    <div class="text-xs text-gray-500">${fmt(d.s.total_views)} organic views</div>
+                </div>
+            `;
+        }
+    });
+}
+
+// Charts
+function renderCharts() {
+    const sorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.total_views - a[1].s.total_views);
+
+    new Chart(document.getElementById('viewsChart'), {
+        type: 'bar',
+        data: {
+            labels: sorted.map(([n]) => n),
+            datasets: [{
+                label: 'Total Views',
+                data: sorted.map(([,d]) => d.s.total_views),
+                backgroundColor: sorted.map(([,d]) => d.color + '99'),
+                borderColor: sorted.map(([,d]) => d.color),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { x: { ticks: { callback: v => fmt(v) } } }
+        }
+    });
+
+    const engSorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.engagement_rate - a[1].s.engagement_rate);
+    new Chart(document.getElementById('engChart'), {
+        type: 'bar',
+        data: {
+            labels: engSorted.map(([n]) => n),
+            datasets: [{
+                label: 'Engagement Rate',
+                data: engSorted.map(([,d]) => d.s.engagement_rate),
+                backgroundColor: engSorted.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e99' : d.s.engagement_rate > 2 ? '#f59e0b99' : '#ef444499'),
+                borderColor: engSorted.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e' : d.s.engagement_rate > 2 ? '#f59e0b' : '#ef4444'),
+                borderWidth: 1
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { x: { ticks: { callback: v => v + '%' } } }
+        }
+    });
+}
+
+// Category trends
+const CATEGORY_DATA = {
+    mortgage: { tv: 5200000, tp: 20, gb: 20, label: "Mortgage", icon: "&#x1F3E0;" },
+    savings: { tv: 22000000, tp: 20, gb: 5, label: "Savings", icon: "&#x1F4B0;" },
+    firsttimebuyer: { tv: 5800000, tp: 17, gb: 17, label: "First-Time Buyer", icon: "&#x1F511;" },
+    buildingsociety: { tv: 1200000, tp: 9, gb: 9, label: "Building Society", icon: "&#x1F3E6;" },
+    isasavings: { tv: 40000, tp: 20, gb: 20, label: "ISA Savings", icon: "&#x1F4CA;" },
+    mortgageadvice: { tv: 1800000, tp: 20, gb: 20, label: "Mortgage Advice", icon: "&#x1F4DD;" },
+    remortgage: { tv: 1500000, tp: 19, gb: 19, label: "Remortgage", icon: "&#x1F504;" },
+    firsthome: { tv: 15000000, tp: 20, gb: 8, label: "First Home", icon: "&#x2728;" },
+    bankswitch: { tv: 200000, tp: 17, gb: 17, label: "Bank Switch", icon: "&#x1F500;" },
+    personalfinance: { tv: 4000000, tp: 20, gb: 5, label: "Personal Finance", icon: "&#x1F4B8;" },
+    fintech: { tv: 700000, tp: 20, gb: 10, label: "Fintech", icon: "&#x1F4F1;" },
+    neobank: { tv: 5500000, tp: 18, gb: 5, label: "Neobank", icon: "&#x1F680;" }
+};
+
+function renderCategories() {
+    const grid = document.getElementById('categories-grid');
+    Object.entries(CATEGORY_DATA).sort((a,b) => b[1].tv - a[1].tv).forEach(([tag, d]) => {
+        grid.innerHTML += `
+            <div class="bg-white rounded-xl p-5 shadow-sm border card-hover">
+                <div class="flex items-center justify-between mb-3">
+                    <div class="text-2xl">${d.icon}</div>
+                    <span class="text-xs font-mono text-gray-400">#${tag}</span>
+                </div>
+                <div class="font-bold mb-1">${d.label}</div>
+                <div class="text-2xl font-black mb-1">${fmt(d.tv)}</div>
+                <div class="text-xs text-gray-500 mb-3">${d.tp} posts | ${d.gb}/${d.tp} UK</div>
+                <div class="text-xs text-gray-400">
+                    ${d.gb === d.tp ? '<span class="text-green-600 font-semibold">100% UK content</span>' :
+                     d.gb/d.tp > 0.5 ? '<span class="text-blue-600 font-semibold">Mostly UK content</span>' :
+                     '<span class="text-amber-600 font-semibold">Global content mix</span>'}
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Init
+renderLandscape();
+renderBrandCards('banks', 'banks-grid');
+renderBrandCards('building-societies', 'bs-grid');
+renderBrandCards('neobanks', 'neo-grid');
+renderAudit();
+renderCharts();
+renderCategories();
+</script>
+
+</body>
+</html>
