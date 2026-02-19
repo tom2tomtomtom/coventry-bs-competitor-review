@@ -29,9 +29,113 @@
         details summary::-webkit-details-marker { display: none; }
         details[open] summary .chevron { transform: rotate(180deg); }
         .chevron { transition: transform 0.2s ease; }
+
+        /* Scroll progress bar */
+        .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #00a651, #22c55e); z-index: 100; transition: width 50ms linear; width: 0%; }
+
+        /* Active nav highlight */
+        .nav-link { position: relative; padding-bottom: 2px; }
+        .nav-link.active { color: #00a651 !important; font-weight: 600; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -12px; left: 0; right: 0; height: 3px; background: #00a651; border-radius: 2px 2px 0 0; }
+
+        /* Back to top button */
+        .back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 90; width: 44px; height: 44px; border-radius: 50%; background: #00a651; color: white; border: none; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; transform: translateY(8px); display: flex; align-items: center; justify-content: center; }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .back-to-top:hover { background: #009944; transform: translateY(-2px); }
+
+        /* Benchmark tabs */
+        .bench-tab { padding: 8px 16px; font-size: 13px; font-weight: 500; color: #64748b; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.15s; background: none; border-top: none; border-left: none; border-right: none; }
+        .bench-tab:hover { color: #334155; }
+        .bench-tab.active { color: #00a651; border-bottom-color: #00a651; font-weight: 600; }
+        .bench-panel { display: none; }
+        .bench-panel.active { display: block; }
+
+        /* Filter pills */
+        .filter-pill { padding: 6px 14px; font-size: 12px; font-weight: 500; border-radius: 9999px; border: 1px solid #e2e8f0; background: white; color: #64748b; cursor: pointer; transition: all 0.15s; }
+        .filter-pill:hover { border-color: #cbd5e1; color: #334155; }
+        .filter-pill.active { background: #00a651; color: white; border-color: #00a651; }
+
+        /* Media mix badges */
+        .mix-strong { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px; font-size: 10px; font-weight: 700; background: #dcfce7; color: #166534; }
+        .mix-some { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px; font-size: 10px; font-weight: 700; background: #fef9c3; color: #854d0e; }
+        .mix-none { display: inline-block; width: 20px; height: 20px; line-height: 20px; text-align: center; border-radius: 4px; font-size: 10px; font-weight: 700; background: #f1f5f9; color: #94a3b8; }
+
+        /* Cmd+K search modal */
+        .search-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; opacity: 0; pointer-events: none; transition: opacity 0.2s; backdrop-filter: blur(4px); }
+        .search-backdrop.open { opacity: 1; pointer-events: auto; }
+        .search-modal { position: fixed; top: 15%; left: 50%; transform: translateX(-50%); width: 560px; max-width: 90vw; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); z-index: 201; opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; transform: translateX(-50%) translateY(8px); }
+        .search-modal.open { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+        .search-input { width: 100%; padding: 16px 20px; font-size: 16px; border: none; outline: none; border-radius: 16px 16px 0 0; background: white; font-family: 'Inter', sans-serif; }
+        .search-results { max-height: 360px; overflow-y: auto; padding: 8px; border-top: 1px solid #e2e8f0; }
+        .search-result { padding: 10px 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+        .search-result:hover, .search-result.selected { background: #f0fdf4; }
+        .search-result .sr-section { font-size: 10px; font-weight: 600; text-transform: uppercase; color: #00a651; min-width: 80px; }
+        .search-result .sr-label { font-size: 14px; color: #1e293b; }
+        .search-hint { padding: 12px 16px; font-size: 11px; color: #94a3b8; text-align: center; border-top: 1px solid #f1f5f9; border-radius: 0 0 16px 16px; }
+
+        /* Collapsible section headers */
+        .section-toggle { cursor: pointer; user-select: none; }
+        .section-toggle .toggle-icon { display: inline-block; transition: transform 0.2s; margin-left: 8px; font-size: 14px; color: #94a3b8; }
+        .section-toggle.collapsed .toggle-icon { transform: rotate(-90deg); }
+        .section-content { transition: max-height 0.3s ease, opacity 0.3s ease; overflow: hidden; }
+        .section-content.collapsed { max-height: 0 !important; opacity: 0; margin-top: 0 !important; padding-top: 0 !important; }
+
+        /* Chart toggle */
+        .chart-toggle { font-size: 11px; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; background: white; color: #64748b; cursor: pointer; transition: all 0.15s; }
+        .chart-toggle:hover { border-color: #00a651; color: #00a651; }
+        .chart-toggle.active { background: #00a651; color: white; border-color: #00a651; }
+
+        /* Priority badge */
+        .priority-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+        .priority-high { background: #fef2f2; color: #dc2626; }
+        .priority-medium { background: #fffbeb; color: #d97706; }
+
+        /* Mobile table cards */
+        @media (max-width: 768px) {
+            .desktop-table { display: none; }
+            .mobile-cards { display: block !important; }
+            .search-modal { top: 5%; }
+        }
+        @media (min-width: 769px) {
+            .mobile-cards { display: none !important; }
+        }
+
+        /* Print stylesheet */
+        @media print {
+            .sticky-nav, .back-to-top, .scroll-progress, .search-backdrop, .search-modal { display: none !important; }
+            .gradient-hero { background: #0f172a !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+            body { font-size: 11px; }
+            main { padding: 0 !important; }
+            section { page-break-inside: avoid; break-inside: avoid; margin-bottom: 20px !important; }
+            .card-hover:hover { transform: none; box-shadow: none; }
+            details[open] { break-inside: avoid; }
+            details:not([open]) > *:not(summary) { display: none; }
+            canvas { max-height: 250px !important; }
+            .bg-white { border: 1px solid #e2e8f0 !important; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4L4 10h4v6h4v-6h4L10 4z" fill="currentColor"/></svg>
+</button>
+
+<!-- SEARCH MODAL -->
+<div class="search-backdrop" id="searchBackdrop"></div>
+<div class="search-modal" id="searchModal">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search brands, sections, data..." autocomplete="off" />
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint">
+        <kbd style="background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:11px;border:1px solid #e2e8f0">Esc</kbd> to close &middot;
+        <kbd style="background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:11px;border:1px solid #e2e8f0">&uarr;&darr;</kbd> navigate &middot;
+        <kbd style="background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:11px;border:1px solid #e2e8f0">Enter</kbd> go
+    </div>
+</div>
 
 <!-- HERO -->
 <header class="gradient-hero text-white relative overflow-hidden">
@@ -41,7 +145,7 @@
     <div class="relative z-10 max-w-7xl mx-auto px-6 py-16">
         <div class="flex items-center gap-3 mb-4">
             <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">COMPETITOR REVIEW</span>
-            <span class="text-gray-400 text-sm">February 2026</span>
+            <span class="text-gray-500 text-sm">February 2026</span>
         </div>
         <h1 class="text-4xl md:text-5xl font-black mb-3">UK Financial Services<br/>Competitor Landscape</h1>
         <p class="text-xl text-gray-300 mb-8 max-w-2xl">Comprehensive analysis for <strong class="text-green-400">Coventry Building Society</strong> — social presence, positioning, campaigns &amp; culture-jacking opportunities across 20 competitors.</p>
@@ -67,20 +171,27 @@
 </header>
 
 <!-- STICKY NAV -->
-<nav class="sticky-nav">
-    <div class="max-w-7xl mx-auto px-6 flex gap-6 overflow-x-auto py-3 text-sm">
-        <a href="#exec-summary" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Executive Summary</a>
-        <a href="#market" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Market Context</a>
-        <a href="#cbs" class="whitespace-nowrap font-semibold text-green-600 hover:text-green-700">CBS Deep-Dive</a>
-        <a href="#landscape" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Competitive Landscape</a>
-        <a href="#banks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Banks</a>
-        <a href="#building-societies" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Building Societies</a>
-        <a href="#neobanks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Neobanks</a>
-        <a href="#benchmarks" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Benchmarks</a>
-        <a href="#tiktok-audit" class="whitespace-nowrap text-gray-500 hover:text-gray-900">TikTok Audit</a>
-        <a href="#categories" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Category Trends</a>
-        <a href="#culture-jack" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Culture-Jacking</a>
-        <a href="#takeaways" class="whitespace-nowrap text-gray-500 hover:text-gray-900">Strategic Priorities</a>
+<nav class="sticky-nav" id="stickyNav">
+    <div class="max-w-7xl mx-auto px-6 flex items-center gap-1 overflow-x-auto py-3 text-sm">
+        <a href="#exec-summary" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="exec-summary">Summary</a>
+        <a href="#market" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="market">Market</a>
+        <a href="#cbs" class="nav-link whitespace-nowrap font-semibold text-green-600 hover:text-green-700 px-2 py-1" data-section="cbs">CBS</a>
+        <a href="#landscape" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="landscape">Landscape</a>
+        <a href="#banks" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="banks">Banks</a>
+        <a href="#building-societies" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="building-societies">BSs</a>
+        <a href="#neobanks" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="neobanks">Neobanks</a>
+        <a href="#benchmarks" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="benchmarks">Benchmarks</a>
+        <a href="#tiktok-audit" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="tiktok-audit">TikTok</a>
+        <a href="#categories" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="categories">Trends</a>
+        <a href="#culture-jack" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="culture-jack">Culture-Jack</a>
+        <a href="#takeaways" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="takeaways">Priorities</a>
+        <a href="#sources" class="nav-link whitespace-nowrap text-gray-600 hover:text-gray-900 px-2 py-1" data-section="sources">Sources</a>
+        <div class="flex-1"></div>
+        <button onclick="openSearch()" class="flex items-center gap-2 text-gray-400 hover:text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-lg px-3 py-1.5 text-xs transition flex-shrink-0" title="Search (Cmd+K)">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="hidden md:inline">Search</span>
+            <kbd class="hidden md:inline bg-white px-1.5 py-0.5 rounded text-xs border border-gray-200 text-gray-400 ml-1">&Cmd;K</kbd>
+        </button>
     </div>
 </nav>
 
@@ -90,36 +201,40 @@
 <!-- EXECUTIVE SUMMARY -->
 <!-- ============================================= -->
 <section id="exec-summary" class="scroll-section">
-    <h2 class="text-2xl font-bold mb-6">Executive Summary</h2>
+    <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold section-toggle" data-target="exec-summary-content">Executive Summary <span class="toggle-icon">&#x25BC;</span></h2>
+    </div>
+    <div class="section-content" id="exec-summary-content">
     <div class="bg-white rounded-xl p-8 shadow-sm border space-y-4">
+        <!-- Stats first for scanners -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 pb-6 border-b">
+            <div class="text-center">
+                <div class="text-2xl font-black text-red-600">&pound;50m+</div>
+                <div class="text-xs text-gray-600">Lloyds — #1 UK FS advertiser</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-pink-600">&pound;58.5m</div>
+                <div class="text-xs text-gray-600">Monzo marketing spend (+167%)</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-green-600">&lt;&pound;5m</div>
+                <div class="text-xs text-gray-600">CBS estimated media spend</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-blue-600">89%</div>
+                <div class="text-xs text-gray-600">UK mortgages via intermediaries</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-black text-purple-600">40%</div>
+                <div class="text-xs text-gray-600">UK adults with digital-only bank</div>
+            </div>
+        </div>
+
         <p class="text-gray-700 leading-relaxed"><strong>Coventry Building Society enters 2025 at a pivotal inflection point.</strong> The &pound;780m acquisition of The Co-operative Bank (completed January 2025) transforms the group into a <strong>&pound;89bn-asset mutual serving 4.5 million members and customers</strong> &mdash; but the competitive landscape is shifting faster than at any point in the past decade.</p>
 
         <p class="text-gray-700 leading-relaxed">Three forces are reshaping UK financial services marketing simultaneously: a wave of <strong>consolidation</strong> (Nationwide + Virgin Money, Coventry + Co-op Bank, pending Santander + TSB), the aggressive <strong>expansion of neobanks</strong> into traditional banking territory (Revolut announced mortgages; Monzo increased marketing spend <strong>167% to &pound;58.5m</strong>), and a regulatory environment under <strong>FCA Consumer Duty</strong> that demands clearer, fairer, more transparent communication.</p>
 
         <p class="text-gray-700 leading-relaxed">Across the 20 institutions reviewed, the last 12 months have seen <strong>four major brand repositionings</strong> (Lloyds, Metro Bank, Skipton, Leeds), <strong>two landmark acquisitions</strong> reshaping the mutual sector, and a decisive shift toward emotional storytelling, humour, and purpose-led marketing.</p>
-
-        <div class="grid md:grid-cols-5 gap-4 mt-6 pt-6 border-t">
-            <div class="text-center">
-                <div class="text-2xl font-black text-red-600">&pound;50m+</div>
-                <div class="text-xs text-gray-500">Lloyds — #1 UK FS advertiser</div>
-            </div>
-            <div class="text-center">
-                <div class="text-2xl font-black text-pink-600">&pound;58.5m</div>
-                <div class="text-xs text-gray-500">Monzo marketing spend (+167%)</div>
-            </div>
-            <div class="text-center">
-                <div class="text-2xl font-black text-green-600">&lt;&pound;5m</div>
-                <div class="text-xs text-gray-500">CBS estimated media spend</div>
-            </div>
-            <div class="text-center">
-                <div class="text-2xl font-black text-blue-600">89%</div>
-                <div class="text-xs text-gray-500">UK mortgages via intermediaries</div>
-            </div>
-            <div class="text-center">
-                <div class="text-2xl font-black text-purple-600">40%</div>
-                <div class="text-xs text-gray-500">UK adults with digital-only bank</div>
-            </div>
-        </div>
 
         <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mt-4">
             <h4 class="font-bold text-amber-800 mb-2">Five strategic themes for CBS:</h4>
@@ -132,13 +247,15 @@
             </ol>
         </div>
     </div>
+    </div>
 </section>
 
 <!-- ============================================= -->
 <!-- MARKET CONTEXT -->
 <!-- ============================================= -->
 <section id="market" class="scroll-section">
-    <h2 class="text-2xl font-bold mb-6">UK FS Marketing Landscape 2024-2025</h2>
+    <h2 class="text-2xl font-bold mb-6 section-toggle" data-target="market-content">UK FS Marketing Landscape 2024-2025 <span class="toggle-icon">&#x25BC;</span></h2>
+    <div class="section-content" id="market-content">
 
     <!-- Rate cycle -->
     <div class="grid md:grid-cols-2 gap-6 mb-8">
@@ -238,6 +355,7 @@
                 <div class="text-xs text-red-700 mt-2">Would become 3rd largest by PCA balances</div>
             </div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -348,15 +466,15 @@
             <table class="w-full text-sm">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-4 py-3 font-semibold">Brand</th>
-                        <th class="text-left px-4 py-3 font-semibold">Category</th>
-                        <th class="text-right px-4 py-3 font-semibold">Total Views</th>
-                        <th class="text-right px-4 py-3 font-semibold">Likes</th>
-                        <th class="text-right px-4 py-3 font-semibold">Eng %</th>
-                        <th class="text-center px-4 py-3 font-semibold">TikTok Acct</th>
-                        <th class="text-center px-4 py-3 font-semibold">Brand Posts</th>
-                        <th class="text-right px-4 py-3 font-semibold">GB %</th>
-                        <th class="text-right px-4 py-3 font-semibold">Creators</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold">Brand</th>
+                        <th scope="col" class="text-left px-4 py-3 font-semibold">Category</th>
+                        <th scope="col" class="text-right px-4 py-3 font-semibold">Total Views</th>
+                        <th scope="col" class="text-right px-4 py-3 font-semibold">Likes</th>
+                        <th scope="col" class="text-right px-4 py-3 font-semibold">Eng %</th>
+                        <th scope="col" class="text-center px-4 py-3 font-semibold">TikTok Acct</th>
+                        <th scope="col" class="text-center px-4 py-3 font-semibold">Brand Posts</th>
+                        <th scope="col" class="text-right px-4 py-3 font-semibold">GB %</th>
+                        <th scope="col" class="text-right px-4 py-3 font-semibold">Creators</th>
                     </tr>
                 </thead>
                 <tbody id="landscape-table"></tbody>
@@ -402,18 +520,28 @@
 <!-- BENCHMARK TABLES -->
 <!-- ============================================= -->
 <section id="benchmarks" class="scroll-section">
-    <h2 class="text-2xl font-bold mb-6">Cross-Category Benchmarks</h2>
+    <h2 class="text-2xl font-bold mb-6 section-toggle" data-target="benchmarks-content">Cross-Category Benchmarks <span class="toggle-icon">&#x25BC;</span></h2>
+    <div class="section-content" id="benchmarks-content">
+
+    <!-- Benchmark Tabs -->
+    <div class="flex gap-1 overflow-x-auto mb-6 border-b border-gray-200 pb-0">
+        <button class="bench-tab active" data-bench="spend">Media Spend</button>
+        <button class="bench-tab" data-bench="digital">Digital Maturity</button>
+        <button class="bench-tab" data-bench="intermediary">Intermediary / B2B</button>
+        <button class="bench-tab" data-bench="brand">Brand &amp; Agency</button>
+    </div>
 
     <!-- Media Spend Hierarchy -->
+    <div class="bench-panel active" id="bench-spend">
     <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
         <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Media Spend Hierarchy</h3></div>
         <div class="overflow-x-auto">
             <table class="w-full text-sm">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-4 py-2 font-semibold">Tier</th>
-                        <th class="text-left px-4 py-2 font-semibold">Institutions</th>
-                        <th class="text-right px-4 py-2 font-semibold">Est. Annual UK Media Spend</th>
+                        <th scope="col" class="text-left px-4 py-2 font-semibold">Tier</th>
+                        <th scope="col" class="text-left px-4 py-2 font-semibold">Institutions</th>
+                        <th scope="col" class="text-right px-4 py-2 font-semibold">Est. Annual UK Media Spend</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y">
@@ -447,19 +575,21 @@
         </div>
         <div class="px-4 py-2 text-xs text-gray-500 border-t">*Monzo's &pound;58.5m total marketing includes non-media; estimated paid media &pound;20m&ndash;&pound;30m. Revolut/Starling spend significantly at global level.</div>
     </div>
+    </div>
 
     <!-- Digital Maturity -->
+    <div class="bench-panel" id="bench-digital">
     <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
         <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Digital Maturity Comparison</h3></div>
         <div class="overflow-x-auto">
             <table class="w-full text-xs">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-3 py-2 font-semibold">Institution</th>
-                        <th class="text-center px-3 py-2 font-semibold">iOS Rating</th>
-                        <th class="text-center px-3 py-2 font-semibold">CMA Ranking</th>
-                        <th class="text-center px-3 py-2 font-semibold">11:FS Score</th>
-                        <th class="text-left px-3 py-2 font-semibold">Key Digital Strength</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Institution</th>
+                        <th scope="col" class="text-center px-3 py-2 font-semibold">iOS Rating</th>
+                        <th scope="col" class="text-center px-3 py-2 font-semibold">CMA Ranking</th>
+                        <th scope="col" class="text-center px-3 py-2 font-semibold">11:FS Score</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Key Digital Strength</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y">
@@ -481,19 +611,21 @@
             </table>
         </div>
     </div>
+    </div>
 
     <!-- Intermediary Channel -->
+    <div class="bench-panel" id="bench-intermediary">
     <div class="bg-white rounded-xl shadow-sm border overflow-hidden mb-6">
         <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Intermediary / B2B Channel Strength</h3></div>
         <div class="overflow-x-auto">
             <table class="w-full text-xs">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-3 py-2 font-semibold">Institution</th>
-                        <th class="text-left px-3 py-2 font-semibold">Intermediary Brand</th>
-                        <th class="text-left px-3 py-2 font-semibold">Broker Portal</th>
-                        <th class="text-center px-3 py-2 font-semibold">Satisfaction</th>
-                        <th class="text-left px-3 py-2 font-semibold">Key B2B Differentiator</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Institution</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Intermediary Brand</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Broker Portal</th>
+                        <th scope="col" class="text-center px-3 py-2 font-semibold">Satisfaction</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Key B2B Differentiator</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y">
@@ -509,19 +641,21 @@
         </div>
         <div class="px-4 py-2 text-xs text-gray-500 border-t">Building societies as a sector maintain highest broker satisfaction (86.5% in H2 2024 per Smart Money People). 89% of UK mortgage lending now flows through intermediaries.</div>
     </div>
+    </div>
 
     <!-- Brand positioning table -->
+    <div class="bench-panel" id="bench-brand">
     <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
         <div class="p-4 border-b bg-gray-50"><h3 class="font-bold">Brand Platform &amp; Agency Roster</h3></div>
         <div class="overflow-x-auto">
             <table class="w-full text-xs">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-3 py-2 font-semibold">Brand</th>
-                        <th class="text-left px-3 py-2 font-semibold">Platform / Tagline</th>
-                        <th class="text-left px-3 py-2 font-semibold">Tone</th>
-                        <th class="text-left px-3 py-2 font-semibold">Celebrity</th>
-                        <th class="text-left px-3 py-2 font-semibold">Creative Agency</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Brand</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Platform / Tagline</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Tone</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Celebrity</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Creative Agency</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y">
@@ -546,6 +680,8 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    </div>
     </div>
 </section>
 
@@ -574,11 +710,23 @@
     <h2 class="text-2xl font-bold mb-6">Engagement Comparison</h2>
     <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-white rounded-xl p-6 shadow-sm border">
-            <h3 class="font-semibold mb-4">Total Views by Brand</h3>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold">Total Views by Brand</h3>
+                <div class="flex gap-1">
+                    <button class="chart-toggle active" data-chart="views" data-mode="top10">Top 10</button>
+                    <button class="chart-toggle" data-chart="views" data-mode="all">All 20</button>
+                </div>
+            </div>
             <canvas id="viewsChart" height="300"></canvas>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border">
-            <h3 class="font-semibold mb-4">Engagement Rate by Brand</h3>
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold">Engagement Rate by Brand</h3>
+                <div class="flex gap-1">
+                    <button class="chart-toggle active" data-chart="eng" data-mode="top10">Top 10</button>
+                    <button class="chart-toggle" data-chart="eng" data-mode="all">All 20</button>
+                </div>
+            </div>
             <canvas id="engChart" height="300"></canvas>
         </div>
     </div>
@@ -597,127 +745,135 @@
 <!-- POSITIONING MAP -->
 <!-- ============================================= -->
 <section id="positioning" class="scroll-section">
-    <h2 class="text-2xl font-bold mb-6">Brand Positioning &amp; Campaigns</h2>
+    <h2 class="text-2xl font-bold mb-4 section-toggle" data-target="positioning-content">Brand Positioning &amp; Campaigns <span class="toggle-icon">&#x25BC;</span></h2>
+    <div class="section-content" id="positioning-content">
+    <div class="flex gap-2 mb-6 flex-wrap" id="positioningFilters">
+        <button class="filter-pill active" data-filter="all">All (20)</button>
+        <button class="filter-pill" data-filter="bank">Banks (10)</button>
+        <button class="filter-pill" data-filter="building-society">Building Societies (5)</button>
+        <button class="filter-pill" data-filter="neobank">Neobanks (5)</button>
+    </div>
     <div class="grid md:grid-cols-2 gap-6" id="positioning-grid">
         <!-- Banks -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">HSBC UK</div>
             <div class="font-bold mb-1">"Together We Thrive"</div>
             <p class="text-sm text-gray-600 mb-2">Global heritage bank. Launched then shuttered Zing payments app (Jan 2024 — May 2025, integrating tech into core app). Heavy TVC with premium production. HSBC SVNS rugby sponsorship driving TikTok buzz (mostly Kenya). 725K TikTok views but only 4/20 posts from UK — reflects global brand challenge.</p>
-            <div class="text-xs text-gray-400">TVC (High) | OOH (High) | Digital | Sports Sponsorship (Rugby)</div>
+            <div class="text-xs text-gray-500">TVC (High) | OOH (High) | Digital | Sports Sponsorship (Rugby)</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Barclays</div>
             <div class="font-bold mb-1">"Moments of Progress"</div>
             <p class="text-sm text-gray-600 mb-2">Premier League title sponsor. PR dominated by "Barclays glitch" on TikTok (562K views). Full-service bank with strong digital. Active fraud prevention messaging. Summer sponsorships, football, music festivals.</p>
-            <div class="text-xs text-gray-400">TVC | Social | Sponsorship (PL) | PR | Very High spend</div>
+            <div class="text-xs text-gray-500">TVC | Social | Sponsorship (PL) | PR | Very High spend</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Lloyds Banking Group</div>
             <div class="font-bold mb-1">"The Power To Do It All"</div>
             <p class="text-sm text-gray-600 mb-2">Iconic black horse. Very high media spend across TV, OOH, radio, digital. "The Power To Do It All" platform emphasises empowerment. Biggest ATL of any UK bank. Yet TikTok presence minimal (77K total views).</p>
-            <div class="text-xs text-gray-400">TVC (Very High) | OOH | Radio | Digital | Branch</div>
+            <div class="text-xs text-gray-500">TVC (Very High) | OOH | Radio | Digital | Branch</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">NatWest</div>
             <div class="font-bold mb-1">"Tomorrow Begins Today"</div>
             <p class="text-sm text-gray-600 mb-2">Team GB Olympic sponsor. 2024 campaign "Let's get going" with Olympic medallists. Youth financial education via Rooster Money (ages 6-17). Cora AI: 11.2M conversations, 50% resolved without humans. Service outage generated 1.1M negative TikTok views. Acquiring Sainsbury's Bank (May 2025).</p>
-            <div class="text-xs text-gray-400">TVC | Digital | SME | Team GB | AI Innovation</div>
+            <div class="text-xs text-gray-500">TVC | Digital | SME | Team GB | AI Innovation</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Santander UK</div>
             <div class="font-bold mb-1">"It Starts Here" / "Bank of Antandec"</div>
             <p class="text-sm text-gray-600 mb-2">Ant &amp; Dec partnership since 2019, renewed into 2026+. "Edge" current account as hero product (May 2024 campaign, House 337). Live projections at Piccadilly Lights, White Cliffs. Top TikTok is fraud warning (1M views). Global agency review underway — potential strategic shift.</p>
-            <div class="text-xs text-gray-400">TVC | OOH | Cinema | Radio | Celebrity | Activation</div>
+            <div class="text-xs text-gray-500">TVC | OOH | Cinema | Radio | Celebrity | Activation</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Virgin Money</div>
             <div class="font-bold mb-1">"Add Extra to Ordinary"</div>
             <p class="text-sm text-gray-600 mb-2">Most active brand TikTok among trad banks (9 posts, @virginmoneyuk). "Add Extra to Ordinary" 2025 campaign via mFuse: OOH, TikTok, Pinterest, radio (Doon Mackichan). Fee-free overseas spending. <strong>Now owned by Nationwide</strong> (completed 2024). "Romanticise your weekdays" = 610K views.</p>
             <div class="text-xs text-gray-400">TikTok | OOH | Radio | Pinterest | Influencer</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Metro Bank</div>
             <div class="font-bold mb-1">"People-People Banking" (2025 rebrand)</div>
             <p class="text-sm text-gray-600 mb-2">M&amp;C Saatchi rebrand ahead of 15th anniversary. Repositioned from "Revolution" to human service. "Stores" not "branches" — weekend opening is key differentiator. Survived &pound;925M rescue (Oct 2023). SME business banking campaign was largest ATL in 3 years. NOTE: @metrobank on TikTok is Philippines.</p>
-            <div class="text-xs text-gray-400">Branch/Store | SME | Hyper-Local | Rebrand</div>
+            <div class="text-xs text-gray-500">Branch/Store | SME | Hyper-Local | Rebrand</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">TSB</div>
             <div class="font-bold mb-1">"Life Made More" — Tiny the Elephant</div>
             <p class="text-sm text-gray-600 mb-2">McCann London's "Elephant in the Room" — Tiny (animatronic puppet, voiced by Daisy May Cooper) addresses money anxiety. Marketing Week Campaign of the Year 2023. First-of-kind BVOD deal with Channel 4. 300% home loan sales increase through micro-segmentation. NOTE: #tsb on TikTok = Roblox game.</p>
-            <div class="text-xs text-gray-400">TVC | BVOD | Character Marketing | Data-Driven | Award-Winning</div>
+            <div class="text-xs text-gray-500">TVC | BVOD | Character Marketing | Data-Driven | Award-Winning</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="bank">
             <div class="category-badge bg-blue-100 text-blue-700 mb-3">Co-operative Bank</div>
             <div class="font-bold mb-1">"It's Good to Be Different"</div>
             <p class="text-sm text-gray-600 mb-2"><strong>Now owned by Coventry Building Society</strong> (&pound;780M, Jan 2025). Returned to mutual ownership. "All Together Even Better" joint OOH campaign at Bank Tube Station. Customer-led ethical policy. Best Charity Banking Provider 10 years running. Go Get Paid = 2025 Celent Model Bank Award.</p>
-            <div class="text-xs text-gray-400">Ethics | Values | CBS-Owned | Charity Banking</div>
+            <div class="text-xs text-gray-500">Ethics | Values | CBS-Owned | Charity Banking</div>
         </div>
 
         <!-- Building Societies -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200 pos-card" data-category="building-society">
             <div class="category-badge bg-green-100 text-green-700 mb-3">Nationwide</div>
             <div class="font-bold mb-1">"A Good Way to Bank" (2023 rebrand)</div>
             <p class="text-sm text-gray-600 mb-2">First brand refresh since 1987. Dominic West as out-of-touch bank CEO (4 instalments). Anti-bank satire of shareholder-driven banks. 4.6M TikTok views organic. "Fairer Share" — &pound;340M returned to 3.4M members. Virgin Money acquisition completed 2024. Branch Promise to 2028. Scam Checker service. Premium TV (Bake Off). ASA complaint from Santander re anti-bank messaging.</p>
-            <div class="text-xs text-gray-400">TVC (High) | OOH | Audio/Podcast | Print | Branch Promise | Dominic West</div>
+            <div class="text-xs text-gray-500">TVC (High) | OOH | Audio/Podcast | Print | Branch Promise | Dominic West</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-300 ring-2 ring-green-200">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-300 ring-2 ring-green-200 pos-card" data-category="building-society">
             <div class="category-badge bg-green-600 text-white mb-3">COVENTRY BS (HOME TEAM)</div>
             <div class="font-bold mb-1">"All Together Better"</div>
             <p class="text-sm text-gray-600 mb-2">Guz Khan as brand ambassador ("Save for Your Sunny Days" VOD, Oct 2024). 4-min mockumentary for Arena naming rights (Emmy-winning director). &pound;780M Co-op Bank acquisition = ~&pound;89bn assets, 4.5M members. New app (2024). VOD-only (no primetime TV). BUT: no TikTok, limited national awareness. B Corp story under-amplified. See deep-dive above.</p>
-            <div class="text-xs text-gray-400">VOD | OOH | Guz Khan | Arena | B Corp | Broker LinkedIn</div>
+            <div class="text-xs text-gray-500">VOD | OOH | Guz Khan | Arena | B Corp | Broker LinkedIn</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200 pos-card" data-category="building-society">
             <div class="category-badge bg-green-100 text-green-700 mb-3">Yorkshire BS</div>
             <div class="font-bold mb-1">"Real Help with Real Life"</div>
             <p class="text-sm text-gray-600 mb-2">Community-focused positioning. 4.1M TikTok views but mostly from #yorkshire (regional pride content). Actual building society content limited. Charity partnerships. Branch-led engagement.</p>
-            <div class="text-xs text-gray-400">Branch | Community | Regional</div>
+            <div class="text-xs text-gray-500">Branch | Community | Regional</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200 pos-card" data-category="building-society">
             <div class="category-badge bg-green-100 text-green-700 mb-3">Skipton BS</div>
             <div class="font-bold mb-1">"Founded on Fairness" (2025 rebrand)</div>
             <p class="text-sm text-gray-600 mb-2">Major 2025 rebrand by Red Brick Road. Simon Farnaby (Ghosts, Detectorists) as talent. 3 TV spots + OOH + radio + social. Channel 4 branded content: "Make Your Move" (12-min episodes). Track Record deposit-free mortgage = TikTok viral (860K views, 9.4% eng). EssenceMediacom North for media.</p>
-            <div class="text-xs text-gray-400">TVC | OOH | Radio | C4 Branded Content | Simon Farnaby | Product Innovation</div>
+            <div class="text-xs text-gray-500">TVC | OOH | Radio | C4 Branded Content | Simon Farnaby | Product Innovation</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-green-200 pos-card" data-category="building-society">
             <div class="category-badge bg-green-100 text-green-700 mb-3">Leeds BS</div>
             <div class="font-bold mb-1">"It's Better to Belong" (Oct 2024 — first ever strapline)</div>
             <p class="text-sm text-gray-600 mb-2">Biggest campaign in 149-year history by Brave Spark. Actress Amy Walsh. Highest social engagement of UK building societies (2,264 interactions). Community-focused. Specialist lending (shared ownership, later life, new build). New agency Join appointed June 2025. 165K TikTok views.</p>
-            <div class="text-xs text-gray-400">Social | OOH | Community | Specialist Lending | First-Ever Brand Campaign</div>
+            <div class="text-xs text-gray-500">Social | OOH | Community | Specialist Lending | First-Ever Brand Campaign</div>
         </div>
 
         <!-- Neobanks -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="neobank">
             <div class="category-badge bg-purple-100 text-purple-700 mb-3">Monzo</div>
             <div class="font-bold mb-1">"Money Never Felt Like Monzo"</div>
             <p class="text-sm text-gray-600 mb-2">TikTok king — 26.9M views, 5 brand posts. First ATL campaign in 5 years via Uncommon (2024). Marketing spend tripled to &pound;58.5M. Marketing Society Brand of the Year 2024. Hot coral as iconic brand asset. 10M+ customers, first profitable year. Business banking campaign Feb 2025. IPO speculation. Premium primetime TV + billboards + radio + podcasts.</p>
             <div class="text-xs text-gray-400">TikTok | TVC | OOH | Radio | Podcasts | Uncommon Creative | &pound;58.5M spend</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="neobank">
             <div class="category-badge bg-purple-100 text-purple-700 mb-3">Revolut</div>
             <div class="font-bold mb-1">"Money Possibilities"</div>
             <p class="text-sm text-gray-600 mb-2">16.7M TikTok views. "Money Possibilities" 2025 global campaign via Anomaly across 20+ countries. UK banking licence granted 2024. 11M+ UK customers, 50M+ global. Shifting from performance to brand spend. Also significant negative UGC — scam complaints (1.7M views), frozen accounts (1.1M views). "Financial super-app" positioning.</p>
             <div class="text-xs text-gray-400">TikTok | OOH/DOOH | Film | Audio | Anomaly Creative | Global</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="neobank">
             <div class="category-badge bg-purple-100 text-purple-700 mb-3">Starling Bank</div>
             <div class="font-bold mb-1">"Good with Money" (2025 rebrand)</div>
             <p class="text-sm text-gray-600 mb-2">2025 rebrand by Wolff Olins + The Sunshine Company. New logo, colour palette, app design. "The Bank Built for You" TV campaign (Jan 2024, Sky/C4/ITV primetime). 3.8M TikTok views. @dralexgeorge AD (830K views). Founder Anne Boden departed. Engine BaaS platform. FCA enforcement (2024 AML). First CMO hire signals maturation.</p>
-            <div class="text-xs text-gray-400">TVC (Primetime) | Rebrand | Wolff Olins | Influencer | BaaS</div>
+            <div class="text-xs text-gray-500">TVC (Primetime) | Rebrand | Wolff Olins | Influencer | BaaS</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="neobank">
             <div class="category-badge bg-purple-100 text-purple-700 mb-3">N26</div>
             <div class="font-bold mb-1">"The Mobile Bank"</div>
             <p class="text-sm text-gray-600 mb-2">Exited UK market in 2020 (post-Brexit). 3.1M TikTok views but entirely continental European (0 GB posts). All content French/German. Not a UK competitor but included for context on digital banking positioning.</p>
-            <div class="text-xs text-gray-400">EU Only | Mobile-First | Not UK</div>
+            <div class="text-xs text-gray-500">EU Only | Mobile-First | Not UK</div>
         </div>
-        <div class="bg-white rounded-xl p-6 shadow-sm border">
+        <div class="bg-white rounded-xl p-6 shadow-sm border pos-card" data-category="neobank">
             <div class="category-badge bg-purple-100 text-purple-700 mb-3">Wise</div>
             <div class="font-bold mb-1">"Be Smart and Get Wise"</div>
             <p class="text-sm text-gray-600 mb-2">First-ever global brand campaign (2025) via Little Big Engine. "Don T. Overpay" character concept. TV, CTV, YouTube, radio in premium comedy/sports slots (NFL, SNL, US Tennis Open). Aided awareness +28% in 2 months, +80% cumulative. 60% growth historically from word-of-mouth. LSE-listed, profitable. NOTE: #wise TikTok polluted with non-financial content.</p>
-            <div class="text-xs text-gray-400">TVC | CTV | YouTube | Radio | First Brand Campaign | Little Big Engine</div>
+            <div class="text-xs text-gray-500">TVC | CTV | YouTube | Radio | First Brand Campaign | Little Big Engine</div>
         </div>
+    </div>
     </div>
 </section>
 
@@ -730,37 +886,37 @@
 
     <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F3E0;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F3E0;</div><span class="priority-badge priority-high">#1 HIGH IMPACT</span></div>
             <h3 class="font-bold mb-2">First-Time Buyer Movement</h3>
             <p class="text-sm text-gray-600 mb-3">#firsttimebuyer (2.6M top post views) and #firsthome are massive. Emotional stories of getting on the ladder. CBS could own the "mortgage moment" — the call when you get approved, the key handover.</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: Strong mortgage product + ethical lender story</div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F4B0;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F4B0;</div><span class="priority-badge priority-high">#2 HIGH IMPACT</span></div>
             <h3 class="font-bold mb-2">Savings Challenge Content</h3>
             <p class="text-sm text-gray-600 mb-3">Monzo's #1 post (14.5M views) is a savings challenge. #savingsaccount and #isasavings are growing. CBS has genuinely competitive rates — perfect for "savings hack" content format.</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: Best buy savings rates + B Corp trust factor</div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F331;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F331;</div><span class="priority-badge priority-high">#3 HIGH IMPACT</span></div>
             <h3 class="font-bold mb-2">Ethical Money / B Corp</h3>
             <p class="text-sm text-gray-600 mb-3">Growing consumer interest in "where does my money go?" CBS is the ONLY B Corp building society. This is an uncontested space on TikTok. Co-op Bank owns "ethical banking" but CBS could own "ethical savings/mortgages".</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: Only B Corp building society — uncontested positioning</div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F6A8;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F6A8;</div><span class="priority-badge priority-medium">#4 MEDIUM</span></div>
             <h3 class="font-bold mb-2">Bank Switching Wave</h3>
             <p class="text-sm text-gray-600 mb-3">#bankswitch content is driving awareness of switching incentives. CBS doesn't offer current accounts, but could redirect this energy to "switch your savings" — move your ISA, move your mortgage.</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: Competitive rates + easy transfer messaging</div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F3D8;&#xFE0F;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F3D8;&#xFE0F;</div><span class="priority-badge priority-medium">#5 MEDIUM</span></div>
             <h3 class="font-bold mb-2">Mortgage Broker TikTok Community</h3>
             <p class="text-sm text-gray-600 mb-3">@gomortgage (681K views), @sturgessmortgage (337K), @ebmortgages (471K) — mortgage brokers are building huge audiences. CBS could partner with these creators as a trusted lender recommendation.</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: "Most Improved" broker platform + Submissions Brain</div>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border card-hover">
-            <div class="text-2xl mb-2">&#x1F4CA;</div>
+            <div class="flex items-center justify-between mb-2"><div class="text-2xl">&#x1F4CA;</div><span class="priority-badge priority-medium">#6 MEDIUM</span></div>
             <h3 class="font-bold mb-2">Rate Drop / Rise Reactions</h3>
             <p class="text-sm text-gray-600 mb-3">Skipton BS went viral with product innovation content (860K views). Every BoE rate decision triggers a wave of mortgage/savings content. CBS could be the trusted voice explaining what rate changes mean for savers.</p>
             <div class="text-xs font-semibold text-green-600">CBS FIT: Authority on savings rates + 140-year heritage</div>
@@ -863,51 +1019,167 @@
             <table class="w-full text-xs">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="text-left px-3 py-2 font-semibold">Brand</th>
-                        <th class="text-center px-2 py-2 font-semibold">TVC</th>
-                        <th class="text-center px-2 py-2 font-semibold">OOH</th>
-                        <th class="text-center px-2 py-2 font-semibold">TikTok</th>
-                        <th class="text-center px-2 py-2 font-semibold">Social</th>
-                        <th class="text-center px-2 py-2 font-semibold">Print</th>
-                        <th class="text-center px-2 py-2 font-semibold">Branch</th>
-                        <th class="text-center px-2 py-2 font-semibold">Activation</th>
-                        <th class="text-center px-2 py-2 font-semibold">PR</th>
-                        <th class="text-center px-2 py-2 font-semibold">Innovation</th>
-                        <th class="text-center px-2 py-2 font-semibold">B2B</th>
+                        <th scope="col" class="text-left px-3 py-2 font-semibold">Brand</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">TVC</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">OOH</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">TikTok</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">Social</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">Print</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">Branch</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">Activation</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">PR</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">Innovation</th>
+                        <th scope="col" class="text-center px-2 py-2 font-semibold">B2B</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y">
-                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2">Coventry BS</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">HSBC</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Barclays</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Lloyds</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">NatWest</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Santander UK</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Virgin Money</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Metro Bank</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td></tr>
-                    <tr><td class="px-3 py-2">TSB</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Co-op Bank</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr class="border-t-2 border-green-300"><td class="px-3 py-2">Nationwide</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Yorkshire BS</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Skipton BS</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Leeds BS</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr class="border-t-2 border-purple-300"><td class="px-3 py-2">Monzo</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
-                    <tr><td class="px-3 py-2">Revolut</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Starling</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td></tr>
-                    <tr><td class="px-3 py-2">Wise</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x2B1C;</td><td class="text-center">&#x1F7E8;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E9;</td><td class="text-center">&#x1F7E8;</td></tr>
+                    <tr class="bg-green-50 font-semibold"><td class="px-3 py-2">Coventry BS</td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">HSBC</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Barclays</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Lloyds</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">NatWest</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Santander UK</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Virgin Money</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Metro Bank</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td></tr>
+                    <tr><td class="px-3 py-2">TSB</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Co-op Bank</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr class="border-t-2 border-green-300"><td class="px-3 py-2">Nationwide</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Yorkshire BS</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Skipton BS</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Leeds BS</td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr class="border-t-2 border-purple-300"><td class="px-3 py-2">Monzo</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
+                    <tr><td class="px-3 py-2">Revolut</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Starling</td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td></tr>
+                    <tr><td class="px-3 py-2">Wise</td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-none" title="None/Minimal">&mdash;</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-strong" title="Strong/Active">S</span></td><td class="text-center"><span class="mix-some" title="Some/Limited">L</span></td></tr>
                 </tbody>
             </table>
         </div>
         <div class="px-4 py-3 text-xs text-gray-500 border-t bg-gray-50">
-            Key: &#x1F7E9; Strong/Active &nbsp; &#x1F7E8; Some/Limited &nbsp; &#x2B1C; None/Minimal
+            Key: <span class="mix-strong" title="Strong/Active">S</span> Strong/Active &nbsp;&nbsp; <span class="mix-some" title="Some/Limited">L</span> Some/Limited &nbsp;&nbsp; <span class="mix-none" title="None/Minimal">&mdash;</span> None/Minimal
         </div>
+    </div>
+</section>
+
+<!-- ============================================= -->
+<!-- SOURCES -->
+<!-- ============================================= -->
+<section id="sources" class="scroll-section">
+    <h2 class="text-2xl font-bold mb-6 section-toggle" data-target="sources-content">Sources (130+) <span class="toggle-icon">&#x25BC;</span></h2>
+    <div class="section-content collapsed" id="sources-content" style="max-height:0">
+    <div class="bg-white rounded-xl p-8 shadow-sm border space-y-8 text-sm">
+
+        <div>
+            <h3 class="font-bold text-gray-800 mb-3 pb-2 border-b">Market Data &amp; Industry Reports</h3>
+            <ul class="space-y-1.5 text-gray-600">
+                <li><a href="https://adassoc.org.uk/our-work/uk-advertising-records-42-6bn-spend-in-2024/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Advertising Association &mdash; UK Advertising Records &pound;42.6bn Spend in 2024</a></li>
+                <li><a href="https://www.bankofengland.co.uk/statistics/mortgage-lenders-and-administrators/2024/2024-q4" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Bank of England &mdash; Mortgage Lenders &amp; Administrators Statistics Q4 2024</a></li>
+                <li><a href="https://www.fca.org.uk/data/financial-promotions-data-2024" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">FCA &mdash; Financial Promotions Data 2024</a></li>
+                <li><a href="https://store.mintel.com/report/uk-mortgages-market-report" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Mintel &mdash; UK Mortgages Market Report</a></li>
+                <li><a href="https://store.mintel.com/report/uk-consumer-attitudes-towards-advertising-in-financial-services-market-report" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Mintel &mdash; UK Consumer Attitudes Towards Advertising in Financial Services</a></li>
+                <li><a href="https://moneyfactscompare.co.uk/news/banking/bank-of-england-base-rate-december-2025/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Moneyfacts &mdash; Bank of England Base Rate December 2025</a></li>
+                <li><a href="https://www.nielsen.com/news-center/2024/nielsen-releases-its-2024-annual-marketing-report-surveying-global-marketers-on-roi-strategies/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Nielsen &mdash; 2024 Annual Marketing Report</a></li>
+                <li><a href="https://www.statista.com/topics/5996/disruptor-banks-uk/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Statista &mdash; Disruptor Banks UK</a></li>
+                <li><a href="https://system1group.com/why-investing-in-brand-is-a-foolproof-strategy" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">System1 Group &mdash; Why Investing in Brand is a Foolproof Strategy</a></li>
+                <li><a href="https://www.thedrum.com/news/2024/11/01/top-20-uk-financial-services-advertisers-media-spend" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">The Drum &mdash; Top 20 UK Financial Services Advertisers Media Spend (Nov 2024)</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-gray-800 mb-3 pb-2 border-b">Digital &amp; App Benchmarking</h3>
+            <ul class="space-y-1.5 text-gray-600">
+                <li><a href="https://www.11fs.com/article/feature-benchmarking-ranking-the-uks-banks-and-challengers" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">11:FS &mdash; Feature Benchmarking: Ranking the UK's Banks and Challengers</a></li>
+                <li><a href="https://fstech.co.uk/fst/Monzo_Tops_CMA_Banking_Satisfaction_Survey.php" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">FStech &mdash; Monzo Tops CMA Banking Satisfaction Survey</a></li>
+                <li><a href="https://www.retailbankerinternational.com/news/chase-beats-monzo-starling-to-rank-first-for-banking-satisfaction/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Retail Banker International &mdash; Chase Beats Monzo, Starling for Banking Satisfaction</a></li>
+                <li><a href="https://www.uptech.team/blog/ai-trends-in-banking" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Uptech &mdash; AI Trends in Banking</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-green-700 mb-3 pb-2 border-b border-green-200">Coventry Building Society &amp; Co-operative Bank</h3>
+            <ul class="space-y-1.5 text-gray-600">
+                <li><a href="https://financialpromoter.co.uk/co-operative-bank-and-coventry-building-society-celebrate-acquisition-with-ooh-campaign/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Financial Promoter &mdash; CBS &amp; Co-op Bank Celebrate Acquisition OOH</a></li>
+                <li><a href="https://someoneinlondon.com/projects/all-together-better" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Someone in London &mdash; All Together Better (brand identity)</a></li>
+                <li><a href="https://www.prolificnorth.co.uk/news/building-society-sent-to-coventry-in-place-for-good-campaign/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Prolific North &mdash; Building Society Sent to Coventry Campaign</a></li>
+                <li><a href="https://sponsorship.org/coventry-building-societys-new-campaign-save-for-your-sunny-days-champions-joyful-savings-local-pride-and-arena-day-experiences-with-guz-khan/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Sponsorship.org &mdash; Save for Your Sunny Days (Guz Khan)</a></li>
+                <li><a href="https://www.coventrybuildingsocietyarena.co.uk/news/coventry-building-society-arena-shines-in-2024-with-events-sports-and-sustainability-wins" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">CBS Arena &mdash; 2024 Events, Sports and Sustainability Wins</a></li>
+                <li><a href="https://centrepoint.org.uk/support-us/corporate-partnerships/coventry-building-society-and-centrepoint" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Centrepoint &mdash; CBS Corporate Partnership</a></li>
+                <li><a href="https://www.mark-making.com/work/coventry-for-intermediaries/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">mark-making* &mdash; Coventry for Intermediaries</a></li>
+                <li><a href="https://www.co-operativebank.co.uk/content-hub/articles-and-advice/the-co-operative-bank-and-coventry-building-society/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Co-operative Bank &mdash; CBS Acquisition Announcement</a></li>
+                <li><a href="https://www.prolificnorth.co.uk/news/new-campaign-new-future-for-co-op-bank-as-coventry-bs-completes-780m-takeover/" target="_blank" class="hover:text-green-700 underline decoration-gray-300 hover:decoration-green-600">Prolific North &mdash; New Campaign, New Future (CBS &pound;780m Takeover)</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-blue-700 mb-3 pb-2 border-b border-blue-200">Retail Banks</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Lloyds</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://creative.salon/articles/work/lloyds-the-power-to-do-it-all" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Salon &mdash; The Power to Do It All</a></li><li><a href="https://www.creativereview.co.uk/lloyds-design-branding-campaign/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Review &mdash; Lloyds Branding</a></li><li><a href="https://www.marketingweek.com/lloyds-brand-repositioning/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Week &mdash; Lloyds Repositioning</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Barclays</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://creative.salon/articles/work/bbh-barclays-make-money-work-for-you-kids-world" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Salon &mdash; BBH Barclays Kids World</a></li><li><a href="https://www.creativeboom.com/news/barclays-launches-major-new-brand-campaign-celebrating-everyday-moments-of-progress/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Boom &mdash; Moments of Progress</a></li><li><a href="https://home.barclays/who-we-are/sponsorship/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Barclays &mdash; Sponsorship Portfolio</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">NatWest</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.tandpgroup.com/work/natwest-tomorrow-begins-today" target="_blank" class="hover:text-green-700 underline decoration-gray-300">T&amp;Pm &mdash; Tomorrow Begins Today</a></li><li><a href="https://www.creativebrief.com/bite/trend/natwest-sprints-out-the-blocks-with-feelgood-team-gb-campaign" target="_blank" class="hover:text-green-700 underline decoration-gray-300">CreativeBrief &mdash; NatWest Team GB</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">HSBC UK</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://creative.salon/articles/work/creative-salon-loves-hsbc-uk-global-purpose-launch" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Salon &mdash; Global Purpose Launch</a></li><li><a href="https://www.campaignlive.com/article/hsbc-uk-everythings-premier-vml/1906020" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Campaign Live &mdash; Everything's Premier (VML)</a></li></ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Santander UK</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.marketing-beat.co.uk/2024/05/03/santander-ant-dec-jon-snow/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Beat &mdash; Ant &amp; Dec</a></li><li><a href="https://www.thedrum.com/news/2023/06/02/santander-taps-succession-star-brian-cox-front-latest-ad" target="_blank" class="hover:text-green-700 underline decoration-gray-300">The Drum &mdash; Brian Cox Ad</a></li><li><a href="https://www.santander.com/en/press-room/press-releases/2025/07/santander-to-acquire-tsb-from-sabadell-for-2-65-billion" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Santander &mdash; TSB Acquisition</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Virgin Money &amp; Metro Bank</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://financialpromoter.co.uk/virgin-money-launches-add-extra-to-ordinary-campaign/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Financial Promoter &mdash; Add Extra to Ordinary</a></li><li><a href="https://www.metrobankonline.co.uk/about-us/press-releases/news/metro-bank-launches-new-relationship-banking-positioning-under-brand-refresh/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Metro Bank &mdash; Relationship Banking Rebrand</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">TSB &amp; Standard Chartered</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://creative.salon/articles/work/mccann-tsb-tiny-the-elephant" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Salon &mdash; Tiny the Elephant</a></li><li><a href="https://www.marketingweek.com/tsb-campaign-of-the-year-2023/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Week &mdash; Campaign of the Year 2023</a></li><li><a href="https://sponsorship.org/esa-awards/2024s-ss5mp-standard-chartered-bank-play-on-campaign/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Sponsorship.org &mdash; Play On Campaign</a></li></ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-green-700 mb-3 pb-2 border-b border-green-200">Building Societies</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Nationwide</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.nationwide.co.uk/media/news/the-boss-is-back-nationwide-returns-with-fourth-spot" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Nationwide &mdash; The Boss is Back</a></li><li><a href="https://www.campaignlive.co.uk/the-work/advertiser/nationwide/7659" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Campaign Live &mdash; Nationwide Profile</a></li><li><a href="https://www.marketing-beat.co.uk/2023/10/09/nationwide-rebrand-30-years/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Beat &mdash; 30 Year Rebrand</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Yorkshire BS</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://lbbonline.com/news/yorkshire-building-society-shows-how-its-helping-real-life-happen" target="_blank" class="hover:text-green-700 underline decoration-gray-300">LBBOnline &mdash; Helping Real Life Happen</a></li><li><a href="https://www.introducertoday.co.uk/breaking-news/2025/12/three-separate-mortgage-businesses-under-single-division-in-ybs/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Introducer Today &mdash; YBS Single Division</a></li></ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Skipton BS</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.redbrickroad.com/recent-news/red-brick-road-unveils-founded-on-fairness-a-new-brand-platform-and-launch-campaign-for-skipton-building-society/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Red Brick Road &mdash; Founded on Fairness</a></li><li><a href="https://www.channel4.com/press/news/channel-4-and-skipton-building-society-spotlight-highs-and-lows-property-ladder-make" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Channel 4 &mdash; Make Your Move</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Leeds BS</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://lbbonline.com/news/brave-spark-tells-people-its-better-to-belong-in-new-brand-platform-for-leeds-building-society" target="_blank" class="hover:text-green-700 underline decoration-gray-300">LBBOnline &mdash; It's Better to Belong</a></li><li><a href="https://www.leedsbuildingsociety.co.uk/press/press-releases/2025/02/leeds-building-society-2024-annual-results/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Leeds BS &mdash; 2024 Annual Results</a></li></ul>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="font-bold text-purple-700 mb-3 pb-2 border-b border-purple-200">Neobanks &amp; Challengers</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Monzo</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.thedrum.com/news/2024/05/28/how-monzo-plans-win-the-hearts-and-minds-every-living-room" target="_blank" class="hover:text-green-700 underline decoration-gray-300">The Drum &mdash; Win Hearts and Minds</a></li><li><a href="https://www.creativereview.co.uk/monzo-brand-growth-advertising-uncommon/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Creative Review &mdash; Brand Growth (Uncommon)</a></li><li><a href="https://www.marketingweek.com/monzo-marketing-paid-off/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Week &mdash; Marketing Paid Off</a></li><li><a href="https://corq.studio/insights/how-monzos-marketing-strategies-of-brand-adjacency-and-interactive-features-drove-millions-of-tiktok-views-in-2024/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Corq Studio &mdash; Monzo TikTok Strategy</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Revolut</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.marketingweek.com/revolut-premium-product-focus/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Week &mdash; Premium Product Focus</a></li><li><a href="https://www.disruptionbanking.com/2024/10/22/revolut-announces-exclusive-customer-event-headlined-by-charli-xcx-to-celebrate-50-million-milestone/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Disruption Banking &mdash; Charli XCX Event</a></li></ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-700 mb-2">Starling Bank</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://www.starlingbank.com/news/starling-bank-launches-new-brand-platform-the-bank-built-for-you/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Starling &mdash; The Bank Built for You</a></li><li><a href="https://www.marketingweek.com/starling-bank-culture-rebrand-positioning/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marketing Week &mdash; Rebrand Positioning</a></li></ul>
+                    <h4 class="font-semibold text-gray-700 mb-2 mt-3">Wise &amp; N26</h4>
+                    <ul class="space-y-1 text-gray-600 text-xs"><li><a href="https://exposureninja.com/blog/wise-marketing-strategy/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Exposure Ninja &mdash; Wise Marketing Strategy</a></li><li><a href="https://marcommnews.com/little-big-engine-launches-sharp-humorous-new-ad-campaign-for-wise/" target="_blank" class="hover:text-green-700 underline decoration-gray-300">Marcomm News &mdash; Be Smart and Get Wise</a></li><li><a href="https://n26.com/en-eu/press/press-release/n26-announces-exit-from-uk-banking-market" target="_blank" class="hover:text-green-700 underline decoration-gray-300">N26 &mdash; UK Market Exit Announcement</a></li></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-4 border-t text-xs text-gray-500">
+            <strong>130+ sources</strong> &nbsp;|&nbsp; Research period: February 2024 &ndash; February 2025 &nbsp;|&nbsp; Compiled: February 2026 &nbsp;|&nbsp; TikTok data via ScrapeCreators API
+        </div>
+    </div>
     </div>
 </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-400 py-8 mt-16">
+<footer class="bg-gray-900 text-gray-500 py-8 mt-16">
     <div class="max-w-7xl mx-auto px-6 text-sm">
         <div class="flex flex-col md:flex-row justify-between items-center gap-4">
             <div>
@@ -1077,7 +1349,7 @@ function renderBrandCards(groupKey, gridId) {
                         <span>${FLAGS[p.r] || p.r}</span>
                     </div>
                     <p class="text-gray-700 mb-2 line-clamp-2">${p.d}</p>
-                    <div class="flex gap-3 text-gray-400">
+                    <div class="flex gap-3 text-gray-500">
                         <span>&#x1F441; ${fmt(p.v)}</span>
                         <span>&#x2764;&#xFE0F; ${fmt(p.l)}</span>
                         <span>&#x1F4E4; ${fmt(p.s || 0)}</span>
@@ -1086,7 +1358,7 @@ function renderBrandCards(groupKey, gridId) {
                 </a>
             `).join('');
         } else {
-            postsHtml = '<div class="text-xs text-gray-400 italic p-3">No high-relevance posts found for this brand</div>';
+            postsHtml = '<div class="text-xs text-gray-500 italic p-3">No high-relevance posts found for this brand</div>';
         }
 
         card.innerHTML = `
@@ -1096,7 +1368,7 @@ function renderBrandCards(groupKey, gridId) {
                         <div class="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold" style="background:${d.color}">${name.charAt(0)}</div>
                         <div>
                             <div class="font-bold text-sm">${name}</div>
-                            <div class="text-xs text-gray-400">${BRAND_POSITIONING[name] || ''}</div>
+                            <div class="text-xs text-gray-500">${BRAND_POSITIONING[name] || ''}</div>
                         </div>
                     </div>
                     ${d.s.has_brand_account ? '<span class="brand-owned-badge">TikTok Active</span>' : ''}
@@ -1104,19 +1376,19 @@ function renderBrandCards(groupKey, gridId) {
                 <div class="grid grid-cols-4 gap-2 text-center mb-4">
                     <div class="bg-gray-50 rounded-lg p-2">
                         <div class="text-sm font-bold">${fmt(d.s.total_views)}</div>
-                        <div class="text-xs text-gray-400">Views</div>
+                        <div class="text-xs text-gray-500">Views</div>
                     </div>
                     <div class="bg-gray-50 rounded-lg p-2">
                         <div class="text-sm font-bold">${fmt(d.s.total_likes)}</div>
-                        <div class="text-xs text-gray-400">Likes</div>
+                        <div class="text-xs text-gray-500">Likes</div>
                     </div>
                     <div class="bg-gray-50 rounded-lg p-2">
                         <div class="text-sm font-bold">${d.s.engagement_rate}%</div>
-                        <div class="text-xs text-gray-400">Eng</div>
+                        <div class="text-xs text-gray-500">Eng</div>
                     </div>
                     <div class="bg-gray-50 rounded-lg p-2">
                         <div class="text-sm font-bold">${d.s.gb_posts}/${d.s.total_posts}</div>
-                        <div class="text-xs text-gray-400">UK</div>
+                        <div class="text-xs text-gray-500">UK</div>
                     </div>
                 </div>
                 <details>
@@ -1163,19 +1435,24 @@ function renderAudit() {
     });
 }
 
-// Charts
-function renderCharts() {
-    const sorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.total_views - a[1].s.total_views);
+// Charts with toggle
+let viewsChartInstance = null;
+let engChartInstance = null;
 
-    new Chart(document.getElementById('viewsChart'), {
+function renderCharts(viewsLimit = 10, engLimit = 10) {
+    const sorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.total_views - a[1].s.total_views);
+    const viewsData = sorted.slice(0, viewsLimit);
+
+    if (viewsChartInstance) viewsChartInstance.destroy();
+    viewsChartInstance = new Chart(document.getElementById('viewsChart'), {
         type: 'bar',
         data: {
-            labels: sorted.map(([n]) => n),
+            labels: viewsData.map(([n]) => n),
             datasets: [{
                 label: 'Total Views',
-                data: sorted.map(([,d]) => d.s.total_views),
-                backgroundColor: sorted.map(([,d]) => d.color + '99'),
-                borderColor: sorted.map(([,d]) => d.color),
+                data: viewsData.map(([,d]) => d.s.total_views),
+                backgroundColor: viewsData.map(([,d]) => d.color + '99'),
+                borderColor: viewsData.map(([,d]) => d.color),
                 borderWidth: 1
             }]
         },
@@ -1188,15 +1465,18 @@ function renderCharts() {
     });
 
     const engSorted = Object.entries(BRAND_DATA).sort((a,b) => b[1].s.engagement_rate - a[1].s.engagement_rate);
-    new Chart(document.getElementById('engChart'), {
+    const engData = engSorted.slice(0, engLimit);
+
+    if (engChartInstance) engChartInstance.destroy();
+    engChartInstance = new Chart(document.getElementById('engChart'), {
         type: 'bar',
         data: {
-            labels: engSorted.map(([n]) => n),
+            labels: engData.map(([n]) => n),
             datasets: [{
                 label: 'Engagement Rate',
-                data: engSorted.map(([,d]) => d.s.engagement_rate),
-                backgroundColor: engSorted.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e99' : d.s.engagement_rate > 2 ? '#f59e0b99' : '#ef444499'),
-                borderColor: engSorted.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e' : d.s.engagement_rate > 2 ? '#f59e0b' : '#ef4444'),
+                data: engData.map(([,d]) => d.s.engagement_rate),
+                backgroundColor: engData.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e99' : d.s.engagement_rate > 2 ? '#f59e0b99' : '#ef444499'),
+                borderColor: engData.map(([,d]) => d.s.engagement_rate > 5 ? '#22c55e' : d.s.engagement_rate > 2 ? '#f59e0b' : '#ef4444'),
                 borderWidth: 1
             }]
         },
@@ -1232,7 +1512,7 @@ function renderCategories() {
             <div class="bg-white rounded-xl p-5 shadow-sm border card-hover">
                 <div class="flex items-center justify-between mb-3">
                     <div class="text-2xl">${d.icon}</div>
-                    <span class="text-xs font-mono text-gray-400">#${tag}</span>
+                    <span class="text-xs font-mono text-gray-500">#${tag}</span>
                 </div>
                 <div class="font-bold mb-1">${d.label}</div>
                 <div class="text-2xl font-black mb-1">${fmt(d.tv)}</div>
@@ -1253,8 +1533,284 @@ renderBrandCards('banks', 'banks-grid');
 renderBrandCards('building-societies', 'bs-grid');
 renderBrandCards('neobanks', 'neo-grid');
 renderAudit();
-renderCharts();
+renderCharts(10, 10);
 renderCategories();
+
+// =============================================
+// INTERACTIVE UX ENHANCEMENTS
+// =============================================
+
+// 1. Scroll Progress Bar
+window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = h > 0 ? (window.scrollY / h * 100) : 0;
+    document.getElementById('scrollProgress').style.width = pct + '%';
+}, { passive: true });
+
+// 2. Back to Top Button
+const backBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    backBtn.classList.toggle('visible', window.scrollY > 600);
+}, { passive: true });
+backBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// 3. Active Nav Highlight (IntersectionObserver)
+const navLinks = document.querySelectorAll('.nav-link[data-section]');
+const sections = [];
+navLinks.forEach(link => {
+    const id = link.dataset.section;
+    const el = document.getElementById(id);
+    if (el) sections.push({ id, el });
+});
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            const link = document.querySelector(`.nav-link[data-section="${entry.target.id}"]`);
+            if (link) {
+                link.classList.add('active');
+                // Scroll nav to show active link
+                link.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+            }
+        }
+    });
+}, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
+
+sections.forEach(s => navObserver.observe(s.el));
+
+// 4. Benchmark Tabs
+document.querySelectorAll('.bench-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.bench-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.bench-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const panel = document.getElementById('bench-' + tab.dataset.bench);
+        if (panel) panel.classList.add('active');
+    });
+});
+
+// 5. Positioning Filter Pills
+document.querySelectorAll('#positioningFilters .filter-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+        document.querySelectorAll('#positioningFilters .filter-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const filter = pill.dataset.filter;
+        document.querySelectorAll('.pos-card').forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+// 6. Chart Toggle (Top 10 / All)
+document.querySelectorAll('.chart-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const chart = btn.dataset.chart;
+        const mode = btn.dataset.mode;
+        const limit = mode === 'top10' ? 10 : 20;
+        // Update toggle button states for this chart
+        document.querySelectorAll(`.chart-toggle[data-chart="${chart}"]`).forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        // Re-render the specific chart
+        if (chart === 'views') {
+            const engBtn = document.querySelector('.chart-toggle[data-chart="eng"].active');
+            const engLimit = engBtn && engBtn.dataset.mode === 'all' ? 20 : 10;
+            renderCharts(limit, engLimit);
+        } else {
+            const viewsBtn = document.querySelector('.chart-toggle[data-chart="views"].active');
+            const viewsLimit = viewsBtn && viewsBtn.dataset.mode === 'all' ? 20 : 10;
+            renderCharts(viewsLimit, limit);
+        }
+    });
+});
+
+// 7. Collapsible Sections
+document.querySelectorAll('.section-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+        const target = document.getElementById(toggle.dataset.target);
+        if (!target) return;
+        const isCollapsed = target.classList.contains('collapsed');
+        if (isCollapsed) {
+            target.classList.remove('collapsed');
+            target.style.maxHeight = target.scrollHeight + 'px';
+            toggle.classList.remove('collapsed');
+            setTimeout(() => { target.style.maxHeight = ''; }, 300);
+        } else {
+            target.style.maxHeight = target.scrollHeight + 'px';
+            requestAnimationFrame(() => {
+                target.classList.add('collapsed');
+                toggle.classList.add('collapsed');
+            });
+        }
+    });
+});
+
+// 8. Cmd+K Search
+const SEARCH_INDEX = [];
+
+// Index sections
+sections.forEach(s => {
+    const heading = s.el.querySelector('h2');
+    if (heading) {
+        SEARCH_INDEX.push({
+            type: 'section',
+            label: heading.textContent.replace(/\s*▼\s*/, '').trim(),
+            id: s.id
+        });
+    }
+});
+
+// Index brands
+Object.keys(BRAND_DATA).forEach(name => {
+    const d = BRAND_DATA[name];
+    const groupKey = Object.entries(BRAND_GROUPS).find(([, brands]) => brands.includes(name));
+    SEARCH_INDEX.push({
+        type: 'brand',
+        label: name,
+        section: groupKey ? groupKey[0] : 'landscape',
+        id: groupKey ? groupKey[0] : 'landscape',
+        meta: `${getCatLabel(d.cat)} | ${fmt(d.s.total_views)} views`
+    });
+});
+
+// Index benchmark tabs
+['Media Spend', 'Digital Maturity', 'Intermediary / B2B', 'Brand & Agency'].forEach((label, i) => {
+    const keys = ['spend', 'digital', 'intermediary', 'brand'];
+    SEARCH_INDEX.push({ type: 'benchmark', label: label, id: 'benchmarks', benchTab: keys[i] });
+});
+
+function openSearch() {
+    document.getElementById('searchBackdrop').classList.add('open');
+    document.getElementById('searchModal').classList.add('open');
+    const input = document.getElementById('searchInput');
+    input.value = '';
+    input.focus();
+    renderSearchResults('');
+}
+
+function closeSearch() {
+    document.getElementById('searchBackdrop').classList.remove('open');
+    document.getElementById('searchModal').classList.remove('open');
+}
+
+let selectedSearchIndex = 0;
+
+function renderSearchResults(query) {
+    const results = document.getElementById('searchResults');
+    const q = query.toLowerCase().trim();
+    let matches = [];
+
+    if (q.length === 0) {
+        matches = SEARCH_INDEX.filter(i => i.type === 'section');
+    } else {
+        matches = SEARCH_INDEX.filter(i => i.label.toLowerCase().includes(q) || (i.meta && i.meta.toLowerCase().includes(q)));
+    }
+
+    matches = matches.slice(0, 8);
+    selectedSearchIndex = 0;
+
+    if (matches.length === 0) {
+        results.innerHTML = '<div class="text-sm text-gray-400 text-center py-6">No results found</div>';
+        return;
+    }
+
+    results.innerHTML = matches.map((m, i) => `
+        <div class="search-result ${i === 0 ? 'selected' : ''}" data-index="${i}" data-id="${m.id}" data-type="${m.type}" ${m.benchTab ? `data-bench="${m.benchTab}"` : ''}>
+            <span class="sr-section">${m.type}</span>
+            <div>
+                <div class="sr-label">${m.label}</div>
+                ${m.meta ? `<div class="text-xs text-gray-400">${m.meta}</div>` : ''}
+            </div>
+        </div>
+    `).join('');
+
+    results.querySelectorAll('.search-result').forEach(el => {
+        el.addEventListener('click', () => navigateSearchResult(el));
+        el.addEventListener('mouseenter', () => {
+            results.querySelectorAll('.search-result').forEach(r => r.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedSearchIndex = parseInt(el.dataset.index);
+        });
+    });
+}
+
+function navigateSearchResult(el) {
+    const id = el.dataset.id;
+    const type = el.dataset.type;
+    closeSearch();
+
+    if (type === 'benchmark' && el.dataset.bench) {
+        // Switch to the right benchmark tab first
+        document.querySelectorAll('.bench-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.bench-panel').forEach(p => p.classList.remove('active'));
+        const tab = document.querySelector(`.bench-tab[data-bench="${el.dataset.bench}"]`);
+        if (tab) tab.classList.add('active');
+        const panel = document.getElementById('bench-' + el.dataset.bench);
+        if (panel) panel.classList.add('active');
+    }
+
+    const target = document.getElementById(id);
+    if (target) {
+        // Ensure section is not collapsed
+        const content = target.querySelector('.section-content');
+        if (content && content.classList.contains('collapsed')) {
+            content.classList.remove('collapsed');
+            content.style.maxHeight = '';
+            const toggle = target.querySelector('.section-toggle');
+            if (toggle) toggle.classList.remove('collapsed');
+        }
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+    renderSearchResults(e.target.value);
+});
+
+document.getElementById('searchInput').addEventListener('keydown', (e) => {
+    const results = document.querySelectorAll('.search-result');
+    if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedSearchIndex = Math.min(selectedSearchIndex + 1, results.length - 1);
+        results.forEach((r, i) => r.classList.toggle('selected', i === selectedSearchIndex));
+        results[selectedSearchIndex]?.scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedSearchIndex = Math.max(selectedSearchIndex - 1, 0);
+        results.forEach((r, i) => r.classList.toggle('selected', i === selectedSearchIndex));
+        results[selectedSearchIndex]?.scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const selected = document.querySelector('.search-result.selected');
+        if (selected) navigateSearchResult(selected);
+    } else if (e.key === 'Escape') {
+        closeSearch();
+    }
+});
+
+document.getElementById('searchBackdrop').addEventListener('click', closeSearch);
+
+// Cmd+K global shortcut
+document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const modal = document.getElementById('searchModal');
+        if (modal.classList.contains('open')) {
+            closeSearch();
+        } else {
+            openSearch();
+        }
+    }
+    if (e.key === 'Escape') {
+        closeSearch();
+    }
+});
 </script>
 
 </body>
